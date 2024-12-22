@@ -54,7 +54,7 @@ const LanguageCategorySection = () => {
                     <div className='flex gap-3 items-center'>
                     <span className='font-bold text-2xl'><RiEnglishInput></RiEnglishInput></span>
                     <div className='text-text-light'>
-                        <h2 className='text-base md:text-xl font-semibold '>Mandarin Chinese Tutor</h2>
+                        <h2 className='text-base md:text-xl font-semibold'>Chinese Tutor</h2>
                         <p>30+ Tutor</p>
                     </div>
                     </div>
