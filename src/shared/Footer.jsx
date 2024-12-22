@@ -13,7 +13,7 @@ const Footer = () => {
                   <aside >
                         <h4 className='flex font-bold text-3xl mb-2'><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></h4>
                         <p>
-                            Connect with expert tutors globally  for <br /> personalized learning and language mastery.
+                            Connect with expert tutors globally <br />  for  personalized learning and language mastery.
                         </p>
                         <div className='flex gap-2 mt-2 text-2xl'>
                             <Link><FaFacebook></FaFacebook></Link>
