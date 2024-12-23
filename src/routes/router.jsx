@@ -7,6 +7,8 @@ import AddTutor from '../pages/AddTutor/AddTutor';
 import MyTutorials from '../pages/MyTutorials/MyTutorials';
 import MyBookedTutors from '../pages/MyBookedTutors/MyBookedTutors';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import Login from '../pages/Login/Login';
+import SignUp from '../pages/SignUp/SignUp';
 
 const router = createBrowserRouter([
     {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
             path: "/my-booked-tutors",
             element: <MyBookedTutors></MyBookedTutors>,
             loader: ()=>fetch('tutors.json')
+        },
+        {
+          path: "/login",
+          element: <Login></Login>
+        },
+        {
+          path: "/signup",
+          element: <SignUp></SignUp>
         }
       ]
     },
