@@ -6,11 +6,13 @@ import FindTutors from '../pages/FindTutors/FindTutors';
 import AddTutor from '../pages/AddTutor/AddTutor';
 import MyTutorials from '../pages/MyTutorials/MyTutorials';
 import MyBookedTutors from '../pages/MyBookedTutors/MyBookedTutors';
+import ErrorPage from '../pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",
@@ -27,11 +29,13 @@ const router = createBrowserRouter([
         },
         {
             path: "/my-tutorials",
-            element: <MyTutorials></MyTutorials>
+            element: <MyTutorials></MyTutorials>,
+            loader: ()=>fetch('myTutorials.json')
         },
         {
             path: "/my-booked-tutors",
-            element: <MyBookedTutors></MyBookedTutors>
+            element: <MyBookedTutors></MyBookedTutors>,
+            loader: ()=>fetch('tutors.json')
         }
       ]
     },
