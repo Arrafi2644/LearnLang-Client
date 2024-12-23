@@ -1,0 +1,93 @@
+[
+    {
+      "_id": "tutor1",
+      "name": "Emily Johnson",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "English",
+      "price": 25,
+      "tutorEmail": "emily.tutor@example.com",
+      "email": "user1@example.com"
+    },
+    {
+      "_id": "tutor2",
+      "name": "Carlos Martínez",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Spanish",
+      "price": 20,
+      "tutorEmail": "carlos.tutor@example.com",
+      "email": "user2@example.com"
+    },
+    {
+      "_id": "tutor3",
+      "name": "Marie Dupont",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "French",
+      "price": 30,
+      "tutorEmail": "marie.tutor@example.com",
+      "email": "user3@example.com"
+    },
+    {
+      "_id": "tutor4",
+      "name": "Hans Müller",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "German",
+      "price": 28,
+      "tutorEmail": "hans.tutor@example.com",
+      "email": "user4@example.com"
+    },
+    {
+      "_id": "tutor5",
+      "name": "Li Wei",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Mandarin Chinese",
+      "price": 35,
+      "tutorEmail": "li.tutor@example.com",
+      "email": "user5@example.com"
+    },
+    {
+      "_id": "tutor6",
+      "name": "Aiko Tanaka",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Japanese",
+      "price": 40,
+      "tutorEmail": "aiko.tutor@example.com",
+      "email": "user6@example.com"
+    },
+    {
+      "_id": "tutor7",
+      "name": "Ahmed Al-Mansoori",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Arabic",
+      "price": 32,
+      "tutorEmail": "ahmed.tutor@example.com",
+      "email": "user7@example.com"
+    },
+    {
+      "_id": "tutor8",
+      "name": "Ivan Petrov",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Russian",
+      "price": 22,
+      "tutorEmail": "ivan.tutor@example.com",
+      "email": "user8@example.com"
+    },
+    {
+      "_id": "tutor9",
+      "name": "Jin Soo",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Korean",
+      "price": 29,
+      "tutorEmail": "jin.tutor@example.com",
+      "email": "user9@example.com"
+    },
+    {
+      "_id": "tutor10",
+      "name": "Anna Rossi",
+      "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+      "language": "Italian",
+      "price": 27,
+      "tutorEmail": "anna.tutor@example.com",
+      "email": "user10@example.com"
+    }
+  ]
+  
