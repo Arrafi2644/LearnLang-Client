@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import MainLayout from '../Layout/MainLayout';
+import MainLayout from '../layout/MainLayout';
 import Home from '../pages/Home/Home';
 import FindTutors from '../pages/FindTutors/FindTutors';
 import AddTutor from '../pages/AddTutor/AddTutor';
