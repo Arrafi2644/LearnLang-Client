@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
-  const { loginUser, signInWithGoogle } = useAuth();
+  const { loginUser, signInWithGoogle, logout } = useAuth();
 
 
   const handleLogin = (e) => {
@@ -40,6 +40,8 @@ const Login = () => {
     })
     
   }
+
+ 
 
   return (
     <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">

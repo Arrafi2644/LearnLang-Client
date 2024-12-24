@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TutorCard from '../../components/TutorCard/TutorCard';
+import axios from 'axios';
 
 const FindTutors = () => {
-    const tutors = useLoaderData();
-    // console.log(tutors);
+    const [tutors, setTutors] = useState([])
+
+    useEffect(()=>{
+        axios.get('http://localhost:5000/tutors')
+        .then(res => setTutors(res.data))
+    }, [])
 
     return (
         <div className='my-10 md:my-14'>
