@@ -3,7 +3,7 @@ import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const AddTutor = () => {
+const AddTutorial = () => {
 
   const {user} = useAuth()
   // console.log(user)
@@ -23,7 +23,7 @@ const AddTutor = () => {
     const tutorialInfo = {name, email, image, language, price, review, description}
     console.log(tutorialInfo);
 
-    axios.post(`http://localhost:5000/tutors`, tutorialInfo)
+    axios.post(`http://localhost:5000/my-tutorials`, tutorialInfo)
     .then(res => {
       console.log(res.data);
       if(res.data.insertedId){
@@ -101,4 +101,4 @@ const AddTutor = () => {
   );
 };
 
-export default AddTutor;
+export default AddTutorial;

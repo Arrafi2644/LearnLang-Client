@@ -3,12 +3,13 @@ import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../layout/MainLayout';
 import Home from '../pages/Home/Home';
 import FindTutors from '../pages/FindTutors/FindTutors';
-import AddTutor from '../pages/AddTutor/AddTutor';
+import AddTutor from '../pages/AddTutor/AddTutorial';
 import MyTutorials from '../pages/MyTutorials/MyTutorials';
 import MyBookedTutors from '../pages/MyBookedTutors/MyBookedTutors';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SignUp/SignUp';
+import AddTutorial from '../pages/AddTutor/AddTutorial';
 
 const router = createBrowserRouter([
     {
@@ -26,13 +27,12 @@ const router = createBrowserRouter([
             loader: ()=>fetch('http://localhost:5000/tutors')
         },
         {
-            path: "/add-tutor",
-            element: <AddTutor></AddTutor>
+            path: "/add-tutorial",
+            element: <AddTutorial></AddTutorial>
         },
         {
             path: "/my-tutorials",
             element: <MyTutorials></MyTutorials>,
-            loader: ()=>fetch('myTutorials.json')
         },
         {
             path: "/my-booked-tutors",

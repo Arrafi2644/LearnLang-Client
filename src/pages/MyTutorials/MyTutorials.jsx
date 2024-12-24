@@ -1,10 +1,25 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
 const MyTutorials = () => {
-    const myTutorials = useLoaderData();
+  const [myTutorials, setMyTutorials] = useState([])
+    // const myTutorials = useLoaderData();
     const {_id, name, image, language, price, tutorEmail, description, email} = myTutorials || {};
     console.log(myTutorials);
+
+    useEffect(()=>{
+         axios.get('http://localhost:5000/my-tutorials')
+         .then(res => {
+          console.log(res.data);
+          setMyTutorials(res.data)
+
+         })
+         .catch(err => {
+          console.log(err);
+         })
+    }, [])
     
     return (
         <div className='my-10 md:my-14'>
@@ -20,6 +35,7 @@ const MyTutorials = () => {
         <th>Price</th>
         <th>Reviews</th>
         <th>description</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -40,8 +56,10 @@ const MyTutorials = () => {
             <td>${tutorial.price}</td>
             <td>{tutorial.review}</td>
             <td>{tutorial.description}</td>
-            <th><button className="btn btn-ghost btn-xs bg-yellow-300">Update</button></th>
-            <th><button className="btn btn-ghost btn-xs bg-red-300">Delete</button></th>
+            <td>
+            <button className="btn btn-ghost btn-xs bg-yellow-300 mr-1">Update</button>
+            <button className="btn btn-ghost btn-xs bg-red-300">Delete</button>
+            </td>
           </tr> )
       }
  
