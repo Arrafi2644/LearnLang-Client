@@ -10,6 +10,8 @@ import ErrorPage from '../pages/ErrorPage/ErrorPage';
 import Login from '../pages/Login/Login';
 import SignUp from '../pages/SignUp/SignUp';
 import AddTutorial from '../pages/AddTutor/AddTutorial';
+import TutorDetails from '../pages/TutorDetails/TutorDetails';
+import Update from '../pages/Update/Update';
 
 const router = createBrowserRouter([
     {
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
         {
             path: "/my-booked-tutors",
             element: <MyBookedTutors></MyBookedTutors>,
-            loader: ()=>fetch('tutors.json')
+            // loader: ()=>fetch(`http://localhost:5000/my-booked-tutors`)
         },
         {
           path: "/login",
@@ -46,6 +48,16 @@ const router = createBrowserRouter([
         {
           path: "/signup",
           element: <SignUp></SignUp>
+        },
+        {
+          path: "/tutor/:id",
+          element: <TutorDetails></TutorDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/tutor/${params.id}`)
+        },
+        {
+          path: '/tutors/:id',
+          element: <Update></Update>,
+          // loader: ({params})=>fetch(`http://localhost:5000/tutors/${params.id}`)
         }
       ]
     },

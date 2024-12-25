@@ -1,14 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
+import { useLoaderData, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-const AddTutorial = () => {
+const Update = () => {
+const [allTutorials, setAllTutorials] = useState([])
+  const { user } = useAuth()
+  // const data = useLoaderData()
+  const params = useParams()
+  const id = (params.id);
 
-  const {user} = useAuth()
+  useEffect(()=>{
+    fetch(`http://localhost:5000/tutors`)
+    .then(res => res.json())
+    .then(data => setAllTutorials(data))
+  }, [])
+
+  console.log(allTutorials);
+
+  const tutorial = allTutorials.find(tutorial => tutorial._id === id);
+  console.log(tutorial);
+
+  const {_id, name, email, language, price, review, description, image, tutorImage} = tutorial || {};
+
+
+  // console.log(data)
   // console.log(user)
-  const tutorImage = user?.photoURL
-  
+  // const tutorImage = user?.photoURL
+
+  console.log(id);
 
   const handleAddTutorial = (e) => {
     e.preventDefault()
@@ -22,28 +43,27 @@ const AddTutorial = () => {
     const review = form.review.value;
     const description = form.description.value;
 
-    const tutorialInfo = {name, email, image, language, price, review, description, tutorImage}
+    const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
     console.log(tutorialInfo);
 
-    axios.post(`http://localhost:5000/tutors`, tutorialInfo)
-    .then(res => {
-      console.log(res.data);
-      if(res.data.insertedId){
-        toast.success("Tutorial added successful!")
-      }
-    })
-    .catch(err => {
-      toast.success("Something went wrong! Please try again.")
-    })
-    
-  }
-  return (
-    // <h2 className='te xt-3xl font-bold text-center'>Add a Tutor</h2>
+    axios.put(`http://localhost:5000/tutors/${id}`, tutorialInfo)
+      .then(res => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          toast.success("Tutorial updated successful!")
+        }
+      })
+      .catch(err => {
+        toast.error("Something went wrong! Please try again.")
+      })
 
+  }
+
+  return (
     <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center">Add Tutorial</h1>
+          <h1 className="text-3xl font-bold text-center">Update Tutorial</h1>
           <p className="py-6 text-center">
             Add tutorials to connect with learners and share your teaching expertise globally.
           </p>
@@ -54,47 +74,47 @@ const AddTutorial = () => {
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input name='name' type="text" placeholder="Name" value={user?.displayName} readOnly className="input input-bordered" required />
+              <input defaultValue={user?.displayName} name='name' type="text" placeholder="Name"  readOnly className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-              <input name='email' type="email" placeholder="Email" value={user?.email} readOnly className="input input-bordered" required />
+              <input name='email' type="email" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Tutorial Image</span>
               </label>
-              <input name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered" required />
+              <input defaultValue={tutorImage} name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Language</span>
               </label>
-              <input name='language' type="text" placeholder="Language" className="input input-bordered" required />
+              <input defaultValue={language}  name='language' type="text" placeholder="Language" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Price</span>
               </label>
-              <input name='price' type="text" placeholder="Price" className="input input-bordered" required />
+              <input defaultValue={price} name='price' type="text" placeholder="Price" className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Review</span>
               </label>
-              <input name='review' type="text" defaultValue={0} readOnly placeholder="Review" className="input input-bordered" required />
+              <input name='review' type="text" defaultValue={review} readOnly placeholder="Review" className="input input-bordered" required />
             </div>
             <div className="form-control col-span-1 md:col-span-2">
               <label className="label">
                 <span className="label-text">Description</span>
               </label>
-              <textarea name='description' className="textarea textarea-bordered resize-none" placeholder="Description" required></textarea>
+              <textarea defaultValue={description} name='description' className="textarea textarea-bordered resize-none" placeholder="Description" required></textarea>
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">
-              <button className="btn bg-accent-light">Add Tutorial</button>
+              <button className="btn bg-accent-light">Update Tutorial</button>
             </div>
           </form>
         </div>
@@ -103,4 +123,4 @@ const AddTutorial = () => {
   );
 };
 
-export default AddTutorial;
+export default Update;

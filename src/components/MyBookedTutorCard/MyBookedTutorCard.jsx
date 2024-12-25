@@ -2,11 +2,11 @@ import React from 'react';
 
 const MyBookedTutorCard = ({tutor}) => {
     
-    const {_id, name, image, language, price, tutorEmail, email} = tutor || {};
+    const {_id, name, image, language, price, tutorEmail, email, tutorImage} = tutor || {};
     return (
         <div className='flex gap-2 shadow-md p-2'>
             <div>
-                <img className='w-48' src={image} alt="" />
+                <img className='w-48' src={tutorImage} alt="" />
             </div>
             <div className='text-text-light flex flex-col'>
                 <h3 className='text-lg font-bold'>{name}</h3>

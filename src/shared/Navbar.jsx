@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/UseAuth';
 import { Tooltip } from 'react-tooltip';
 
@@ -8,11 +8,11 @@ const Navbar = () => {
     const {user, logout} = useAuth()
     console.log(user?.photoURL);
     const links = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/find-tutors'>Find Tutor</Link></li>
-        <li><Link to='/add-tutorial'>Add Tutor</Link></li>
-        <li><Link to='/my-tutorials'>My Tutorials</Link></li>
-        <li><Link to='/my-booked-tutors'>My Booked Tutors</Link></li>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/find-tutors'>Find Tutor</NavLink></li>
+        <li><NavLink to='/add-tutorial'>Add Tutor</NavLink></li>
+        <li><NavLink to='/my-tutorials'>My Tutorials</NavLink></li>
+        <li><NavLink to='/my-booked-tutors'>My Booked Tutors</NavLink></li>
     </>
 
 const handleSignout = ()=>{
@@ -61,7 +61,7 @@ const handleSignout = ()=>{
                 <div className="navbar-end pr-0 gap-1">
                       {
                         user? <div className='flex gap-1 items-center'>
-                            <img className='h-10 w-10 rounded-full' id='userImg' src={user?.photoURL} alt="" />
+                            <img className='h-10 w-10 rounded-full' referrerPolicy='no-referrer' id='userImg' src={user?.photoURL} alt="" />
                         <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
                         <Link onClick={handleSignout} className="btn bg-accent-light">Logout</Link>
                         </div>

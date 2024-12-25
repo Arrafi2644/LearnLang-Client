@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const LanguageCategorySection = () => {
     return (
         <div className='mt-10 md:mt-14'>
-            <h2 className='text-3xl mb-4 font-bold text-primary-light text-center'>Choose Your Language</h2>
+            <h2 className='text-3xl mb-4 font-bold  text-center'>Choose Your Language</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                 <Link to='/find-tutors' className='border p-4 rounded-sm flex gap-2 items-center justify-between'>
                     <div className='flex gap-3 items-center'>

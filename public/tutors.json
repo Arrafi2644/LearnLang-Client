@@ -1,93 +1,334 @@
 [
-    {
+  {
       "_id": "tutor1",
       "name": "Emily Johnson",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "English",
       "price": 25,
       "tutorEmail": "emily.tutor@example.com",
-      "email": "user1@example.com"
-    },
-    {
+      "email": "user1@example.com",
+      "review": 145,
+      "description": "Emily specializes in teaching English communication skills and grammar for all levels."
+  },
+  {
       "_id": "tutor2",
       "name": "Carlos Martínez",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Spanish",
       "price": 20,
       "tutorEmail": "carlos.tutor@example.com",
-      "email": "user2@example.com"
-    },
-    {
+      "email": "user2@example.com",
+      "review": 89,
+      "description": "Carlos offers interactive lessons to help you master conversational and business Spanish."
+  },
+  {
       "_id": "tutor3",
       "name": "Marie Dupont",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "French",
       "price": 30,
       "tutorEmail": "marie.tutor@example.com",
-      "email": "user3@example.com"
-    },
-    {
+      "email": "user3@example.com",
+      "review": 176,
+      "description": "Learn French with Marie through engaging tutorials focusing on language and culture."
+  },
+  {
       "_id": "tutor4",
       "name": "Hans Müller",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "German",
       "price": 28,
       "tutorEmail": "hans.tutor@example.com",
-      "email": "user4@example.com"
-    },
-    {
+      "email": "user4@example.com",
+      "review": 54,
+      "description": "Hans provides structured German lessons designed for beginners and advanced learners alike."
+  },
+  {
       "_id": "tutor5",
       "name": "Li Wei",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
-      "language": "Mandarin Chinese",
+      "language": "Chinese",
       "price": 35,
       "tutorEmail": "li.tutor@example.com",
-      "email": "user5@example.com"
-    },
-    {
+      "email": "user5@example.com",
+      "review": 199,
+      "description": "Learn Mandarin Chinese with Li Wei, focusing on practical speaking and listening skills."
+  },
+  {
       "_id": "tutor6",
       "name": "Aiko Tanaka",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Japanese",
       "price": 40,
       "tutorEmail": "aiko.tutor@example.com",
-      "email": "user6@example.com"
-    },
-    {
+      "email": "user6@example.com",
+      "review": 132,
+      "description": "Aiko offers immersive Japanese lessons to improve your language skills and cultural understanding."
+  },
+  {
       "_id": "tutor7",
       "name": "Ahmed Al-Mansoori",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Arabic",
       "price": 32,
       "tutorEmail": "ahmed.tutor@example.com",
-      "email": "user7@example.com"
-    },
-    {
+      "email": "user7@example.com",
+      "review": 77,
+      "description": "Ahmed helps you master Arabic for personal, business, or travel purposes."
+  },
+  {
       "_id": "tutor8",
       "name": "Ivan Petrov",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Russian",
       "price": 22,
       "tutorEmail": "ivan.tutor@example.com",
-      "email": "user8@example.com"
-    },
-    {
+      "email": "user8@example.com",
+      "review": 113,
+      "description": "Ivan provides personalized Russian language lessons tailored to your needs."
+  },
+  {
       "_id": "tutor9",
       "name": "Jin Soo",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Korean",
       "price": 29,
       "tutorEmail": "jin.tutor@example.com",
-      "email": "user9@example.com"
-    },
-    {
+      "email": "user9@example.com",
+      "review": 162,
+      "description": "Jin teaches Korean through interactive lessons, helping you achieve fluency quickly."
+  },
+  {
       "_id": "tutor10",
       "name": "Anna Rossi",
       "image": "https://i.ibb.co.com/KVYcFnm/image.png",
       "language": "Italian",
       "price": 27,
       "tutorEmail": "anna.tutor@example.com",
-      "email": "user10@example.com"
-    }
-  ]
+      "email": "user10@example.com",
+      "review": 45,
+      "description": "Anna provides engaging lessons to help you learn the Italian language and culture."
+  },
+  {
+    "_id": "tutor11",
+    "name": "Sophia Brown",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "English",
+    "price": 24,
+    "tutorEmail": "sophia.tutor@example.com",
+    "email": "user11@example.com",
+    "review": 88,
+    "description": "Sophia teaches English grammar and writing skills for academic and professional purposes."
+},
+{
+    "_id": "tutor12",
+    "name": "Lucas Garcia",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Spanish",
+    "price": 21,
+    "tutorEmail": "lucas.tutor@example.com",
+    "email": "user12@example.com",
+    "review": 93,
+    "description": "Learn Spanish with Lucas through fun and engaging lessons tailored to your needs."
+},
+{
+    "_id": "tutor13",
+    "name": "Claire Martin",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "French",
+    "price": 29,
+    "tutorEmail": "claire.tutor@example.com",
+    "email": "user13@example.com",
+    "review": 117,
+    "description": "Claire focuses on conversational French and grammar for effective communication."
+},
+{
+    "_id": "tutor14",
+    "name": "Thomas Schmidt",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "German",
+    "price": 26,
+    "tutorEmail": "thomas.tutor@example.com",
+    "email": "user14@example.com",
+    "review": 109,
+    "description": "Thomas offers practical German lessons for students and professionals."
+},
+{
+    "_id": "tutor15",
+    "name": "Chen Huang",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Chinese",
+    "price": 36,
+    "tutorEmail": "chen.tutor@example.com",
+    "email": "user15@example.com",
+    "review": 164,
+    "description": "Chen specializes in teaching Mandarin pronunciation and writing skills."
+},
+{
+    "_id": "tutor16",
+    "name": "Yuki Nakamura",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Japanese",
+    "price": 41,
+    "tutorEmail": "yuki.tutor@example.com",
+    "email": "user16@example.com",
+    "review": 134,
+    "description": "Yuki provides beginner to advanced Japanese lessons focusing on daily communication."
+},
+{
+    "_id": "tutor17",
+    "name": "Fatima Hassan",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Arabic",
+    "price": 34,
+    "tutorEmail": "fatima.tutor@example.com",
+    "email": "user17@example.com",
+    "review": 156,
+    "description": "Fatima offers Arabic lessons for both academic and travel purposes."
+},
+{
+    "_id": "tutor18",
+    "name": "Alexey Ivanov",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Russian",
+    "price": 23,
+    "tutorEmail": "alexey.tutor@example.com",
+    "email": "user18@example.com",
+    "review": 78,
+    "description": "Alexey teaches Russian through personalized lessons focused on vocabulary and pronunciation."
+},
+{
+    "_id": "tutor19",
+    "name": "Soo Min",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Korean",
+    "price": 31,
+    "tutorEmail": "soomin.tutor@example.com",
+    "email": "user19@example.com",
+    "review": 99,
+    "description": "Soo helps students learn Korean quickly with immersive lessons."
+},
+{
+    "_id": "tutor20",
+    "name": "Marco Ricci",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Italian",
+    "price": 30,
+    "tutorEmail": "marco.tutor@example.com",
+    "email": "user20@example.com",
+    "review": 73,
+    "description": "Marco provides engaging lessons in Italian for all age groups."
+},
+{
+    "_id": "tutor21",
+    "name": "Olivia Taylor",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "English",
+    "price": 27,
+    "tutorEmail": "olivia.tutor@example.com",
+    "email": "user21@example.com",
+    "review": 145,
+    "description": "Olivia offers comprehensive English tutorials to improve your fluency."
+},
+{
+    "_id": "tutor22",
+    "name": "Diego Rodríguez",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Spanish",
+    "price": 19,
+    "tutorEmail": "diego.tutor@example.com",
+    "email": "user22@example.com",
+    "review": 88,
+    "description": "Diego teaches Spanish with a focus on vocabulary building and pronunciation."
+},
+{
+    "_id": "tutor23",
+    "name": "Amélie Bouchard",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "French",
+    "price": 32,
+    "tutorEmail": "amelie.tutor@example.com",
+    "email": "user23@example.com",
+    "review": 172,
+    "description": "Amélie provides French lessons that combine grammar, culture, and communication."
+},
+{
+    "_id": "tutor24",
+    "name": "Franz Bauer",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "German",
+    "price": 33,
+    "tutorEmail": "franz.tutor@example.com",
+    "email": "user24@example.com",
+    "review": 81,
+    "description": "Franz delivers professional German lessons for all proficiency levels."
+},
+{
+    "_id": "tutor25",
+    "name": "Zhang Ming",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Chinese",
+    "price": 38,
+    "tutorEmail": "zhang.tutor@example.com",
+    "email": "user25@example.com",
+    "review": 158,
+    "description": "Zhang's Mandarin lessons focus on practical communication and writing skills."
+},
+{
+    "_id": "tutor26",
+    "name": "Sakura Harada",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Japanese",
+    "price": 42,
+    "tutorEmail": "sakura.tutor@example.com",
+    "email": "user26@example.com",
+    "review": 120,
+    "description": "Sakura offers Japanese lessons with a strong focus on cultural immersion."
+},
+{
+    "_id": "tutor27",
+    "name": "Ali Khaled",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Arabic",
+    "price": 35,
+    "tutorEmail": "ali.tutor@example.com",
+    "email": "user27@example.com",
+    "review": 152,
+    "description": "Ali helps students master Arabic through interactive lessons."
+},
+{
+    "_id": "tutor28",
+    "name": "Nikolai Smirnov",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Russian",
+    "price": 24,
+    "tutorEmail": "nikolai.tutor@example.com",
+    "email": "user28@example.com",
+    "review": 102,
+    "description": "Nikolai's lessons focus on building fluency and confidence in Russian."
+},
+{
+    "_id": "tutor29",
+    "name": "Hye Jin",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Korean",
+    "price": 28,
+    "tutorEmail": "hyejin.tutor@example.com",
+    "email": "user29@example.com",
+    "review": 139,
+    "description": "Hye teaches Korean through engaging lessons suitable for all skill levels."
+},
+{
+    "_id": "tutor30",
+    "name": "Elena Conti",
+    "image": "https://i.ibb.co.com/KVYcFnm/image.png",
+    "language": "Italian",
+    "price": 31,
+    "tutorEmail": "elena.tutor@example.com",
+    "email": "user30@example.com",
+    "review": 112,
+    "description": "Elena provides Italian lessons with a focus on conversational skills and cultural nuances."
+}
+]
+
   
