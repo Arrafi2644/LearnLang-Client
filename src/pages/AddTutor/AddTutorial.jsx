@@ -24,7 +24,7 @@ const AddTutorial = () => {
     const description = form.description.value;
 
     const tutorialInfo = {name, email, image, language, price, review, description, tutorImage}
-    console.log(tutorialInfo);
+    // console.log(tutorialInfo);
 
     // axiosInstance.post(`/tutors`, tutorialInfo)
     // .then(res => {

@@ -25,12 +25,12 @@ const LanguageCategorySection = () => {
         axios.get('/languageCategory.json')
             .then(res => setCategories(res.data))
     }, [])
-    console.log(categories);
+    // console.log(categories);
 
     const handleCategory = (category) => {
-        console.log(category);
+        // console.log(category);
         const language = category.language;
-        console.log(language);
+        // console.log(language);
         
        
     }
@@ -38,7 +38,7 @@ const LanguageCategorySection = () => {
 
     // console.log(tutors);
     // const categories = tutors.filter(tutor => tutor.language)
-    console.log(categories);
+    // console.log(categories);
     return (
         <div className='mt-10 md:mt-14'>
             <h2 className='text-3xl mb-4 font-bold  text-center'>Choose Your Language</h2>

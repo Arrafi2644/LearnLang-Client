@@ -17,14 +17,14 @@ const MyBookedTutors = () => {
     useEffect(()=>{
       axiosInstance.get(`/my-booked-tutors/${email}`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         const tutors = res.data;
         // const filteredTutors = tutors.filter(tutor => tutor.email === email)
         //   setBookedTutors(filteredTutors)
         setBookedTutors(res.data)
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
       })
     }, [])
 

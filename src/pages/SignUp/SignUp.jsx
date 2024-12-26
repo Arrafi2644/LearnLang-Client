@@ -18,11 +18,11 @@ const SignUp = () => {
     const photo = form.photo.value;
     const password = form.password.value;
 
-    console.log({ name, email, photo, password });
+    // console.log({ name, email, photo, password });
 
     signupUser(email, password)
     .then(res => {
-      console.log(res.user);
+      // console.log(res.user);
 
       updateUser({displayName: name, photoURL: photo})
       .then(res => {
@@ -34,7 +34,7 @@ const SignUp = () => {
         navigate('/')
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
       })
 
     })

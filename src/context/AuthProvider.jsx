@@ -40,20 +40,20 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
-            console.log("user", currentUser?.email);
+            // console.log("user", currentUser?.email);
             if(currentUser?.email){
                 const user = {email: currentUser.email};
 
                 axios.post('https://learn-lang-server-rose.vercel.app/jwt', user, {withCredentials: true})
                 .then(res => {
-                    console.log("Login ", res.data)
+                    // console.log("Login ", res.data)
                     setLoading(false)
             })
             }
              else{
                 axios.post('https://learn-lang-server-rose.vercel.app/logout', {}, {withCredentials: true})
                 .then(res => {
-                    console.log("Logout ", res.data)
+                    // console.log("Logout ", res.data)
                     setLoading(false)
                 })
              }

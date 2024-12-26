@@ -11,6 +11,8 @@ const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     // const { user, loading, } = useAuth()
 
+    // console.log(user);
+
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("dark")
@@ -25,7 +27,7 @@ const Navbar = () => {
         document.querySelector("html").setAttribute("data-theme", localTheme)
     }, [theme])
 
-    console.log(theme);
+    // console.log(theme);
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -36,14 +38,14 @@ const Navbar = () => {
     </>
 
 const handleSignout = ()=>{
-    console.log(logout);
+    // console.log(logout);
     logout()
     .then(res => {
-      console.log(res);
+    //   console.log(res);
       toast.success("Logout successful")
     })
     .catch(error => {
-      console.log(error);
+    //   console.log(error);
       toast.error("Something wrong! Try again.")
     }) 
   }

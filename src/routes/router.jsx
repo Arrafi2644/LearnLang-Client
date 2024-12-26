@@ -58,7 +58,7 @@ const router = createBrowserRouter([
         {
           path: "/tutor/:id",
           element: <PrivateRoute><TutorDetails></TutorDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`https://learn-lang-server-rose.vercel.app/tutor/${params.id}`)
+          // loader: ({params}) => fetch(`https://learn-lang-server-rose.vercel.app/tutor/${params.id}`)
         },
         {
           path: '/tutors/:id',

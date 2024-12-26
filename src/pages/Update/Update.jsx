@@ -17,10 +17,10 @@ const [allTutorials, setAllTutorials] = useState([])
     .then(data => setAllTutorials(data))
   }, [])
 
-  console.log(allTutorials);
+  // console.log(allTutorials);
 
   const tutorial = allTutorials.find(tutorial => tutorial._id === id);
-  console.log(tutorial);
+  // console.log(tutorial);
 
   const {_id, name, email, language, price, review, description, image, tutorImage} = tutorial || {};
 
@@ -29,7 +29,7 @@ const [allTutorials, setAllTutorials] = useState([])
   // console.log(user)
   // const tutorImage = user?.photoURL
 
-  console.log(id);
+  // console.log(id);
 
   const handleAddTutorial = (e) => {
     e.preventDefault()
@@ -44,11 +44,11 @@ const [allTutorials, setAllTutorials] = useState([])
     const description = form.description.value;
 
     const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
-    console.log(tutorialInfo);
+    // console.log(tutorialInfo);
 
     axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutorialInfo)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data.modifiedCount > 0) {
           toast.success("Tutorial updated successful!")
         }

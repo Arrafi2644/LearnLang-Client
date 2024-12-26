@@ -9,10 +9,10 @@ const Login = () => {
   const { loginUser, signInWithGoogle, logout } = useAuth();
   const location = useLocation()
   const navigate = useNavigate()
-  console.log(location);
+  // console.log(location);
 
   const from = location.state;
-  console.log(from);
+  // console.log(from);
 
 
   const handleLogin = (e) => {
@@ -26,7 +26,7 @@ const Login = () => {
 
     loginUser(email, password)
     .then(res => {
-      console.log(res.user);
+      // console.log(res.user);
 
       toast.success("Login successfully!")
       
@@ -35,7 +35,7 @@ const Login = () => {
 
     })
     .catch(error => {
-      console.log(error)
+      // console.log(error)
       toast.error("Incorrect email or password!")
     })
 
@@ -44,7 +44,7 @@ const Login = () => {
   const handleLoginWithGoogle = () => {
     signInWithGoogle()
     .then(res => {
-      console.log(res.user);
+      // console.log(res.user);
   
       toast.success("Login successful!")
       navigate(location.state ? location.state : '/')

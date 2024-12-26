@@ -16,23 +16,23 @@ const TutorDetails = () => {
 
 
     const params = useParams()
-    console.log(params.id);
+    // console.log(params.id);
     const id = params.id;
 
     useEffect(() => {
         axios.get(`http://localhost:5000/tutors/${id}`)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setTutor(res.data)
             })
     }, [])
 
-    console.log(tutor);
+    // console.log(tutor);
 
     const { _id, name, tutorImage, language, price, email, description, review } = tutor || {}
     tutor.userEmail = user?.email;
 
-    console.log(tutor);
+    // console.log(tutor);
 
     const bookedTutor = {
         courseId: _id,
@@ -48,7 +48,7 @@ const TutorDetails = () => {
     // console.log("user", user?.email);
 
     const handleMyBookedTutor = (id) => {
-        console.log("Booked tutor", id);
+        // console.log("Booked tutor", id);
 
         // const newTutor = allTutors.find(tutor => tutor._id === id)
         // console.log(newTutor);
@@ -62,11 +62,11 @@ const TutorDetails = () => {
 
         axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 toast.success("Tutor booked successfully!")
             })
             .catch(err => {
-                console.log(err);
+                // console.log(err);
                 toast.error("Something went wrong!")
             })
 

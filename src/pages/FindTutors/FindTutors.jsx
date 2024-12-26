@@ -10,9 +10,9 @@ const FindTutors = () => {
     const [search, setSearch] = useState("")
     const params = useParams()
     // console.log(params);
-    console.log(params)
+    // console.log(params)
     const category = params.category
-    console.log(category);
+    // console.log(category);
 
 
 

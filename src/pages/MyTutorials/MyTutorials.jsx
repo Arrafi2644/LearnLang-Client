@@ -27,7 +27,7 @@ const MyTutorials = () => {
   }, [])
 
   const handleDeleteTutorial = (id) => {
-    console.log(id);
+    // console.log(id);
 
     Swal.fire({
       title: "Are you sure?",
@@ -43,7 +43,7 @@ const MyTutorials = () => {
 
         axios.delete(`https://learn-lang-server-rose.vercel.app/tutors/myTutorials/${id}`)
           .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             if (res.data.deletedCount > 0) {
 
               Swal.fire({
@@ -58,7 +58,7 @@ const MyTutorials = () => {
 
           })
           .catch(err => {
-            console.log(err);
+            // console.log(err);
           })
 
       }

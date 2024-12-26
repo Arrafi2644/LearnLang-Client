@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TutorCard = ({tutor}) => {
-    console.log(tutor);
+    // console.log(tutor);
     const {_id, name, tutorImage, language, price, tutorEmail, email} = tutor;
     return (
         <div className='flex gap-2 shadow-md p-2'>

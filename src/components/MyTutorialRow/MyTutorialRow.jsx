@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyTutorialRow = ({tutorial, handleDeleteTutorial}) => {
-    console.log(tutorial);
+    // console.log(tutorial);
 
   const {_id, name, email, language, price, review, description, image, tutorImage} = tutorial;
     return (

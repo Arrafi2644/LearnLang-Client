@@ -7,7 +7,7 @@ const MyBookedTutorCard = ({tutor}) => {
     // console.log(tutor)
 
     const {_id, name, image, language, price, tutorEmail, email, tutorImage, courseId} = tutor || {};
-    console.log(_id);
+    // console.log(_id);
 
     const handleReview = (id) => {
         // console.log(id);
