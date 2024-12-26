@@ -47,7 +47,9 @@ const Login = () => {
       // console.log(res.user);
   
       toast.success("Login successful!")
+
       navigate(location.state ? location.state : '/')
+      // console.log(res.data.user?.email);
       
     })
     .catch(error => {

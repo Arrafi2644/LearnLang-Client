@@ -12,7 +12,8 @@ const FindTutors = () => {
     // console.log(params);
     // console.log(params)
     const category = params.category
-    // console.log(category);
+    
+    // console.log(params);
 
 
 
@@ -26,7 +27,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/${category}`)
+    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/language/${category}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -42,22 +43,23 @@ const FindTutors = () => {
     // }, [])
 
     useEffect(() => {
-        let url = `https://learn-lang-server-rose.vercel.app/tutors`
-        if (search) {
-            url = `https://learn-lang-server-rose.vercel.app/tutors/${search}`
-        }
-        if (category) {
-            url = `https://learn-lang-server-rose.vercel.app/tutors/${category}`
-        }
+        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+        // if (search) {
+        //     url = `https://learn-lang-server-rose.vercel.app/tutors?search=${search}`
+        // }
+        // if (category) {
+        //     url = `https://learn-lang-server-rose.vercel.app/tutors?category=${category}`
+        // }
 
-        axios.get(url)
+        axios.get(`https://learn-lang-server-rose.vercel.app/tutors?language=${category}`)
             .then(res => {
                 setTutors(res.data)
                 setAllTutors(res.data)
             }
             )
 
-    }, [setTutors, search, category])
+    }, [setTutors, category])
 
 
 

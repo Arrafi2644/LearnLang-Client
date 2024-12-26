@@ -6,7 +6,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const AddTutorial = () => {
 
-  const {user} = useAuth()
+  const { user } = useAuth()
   const axiosInstance = useAxiosSecure()
   // console.log(user)
   const tutorImage = user?.photoURL
@@ -23,7 +23,7 @@ const AddTutorial = () => {
     const review = parseInt(form.review.value);
     const description = form.description.value;
 
-    const tutorialInfo = {name, email, image, language, price, review, description, tutorImage}
+    const tutorialInfo = { name, email, image, language, price, review, description, tutorImage }
     // console.log(tutorialInfo);
 
     // axiosInstance.post(`/tutors`, tutorialInfo)
@@ -34,16 +34,16 @@ const AddTutorial = () => {
     //   }
     // })
     axiosInstance.post(`/tutors`, tutorialInfo)
-    .then(res => {
-      // console.log(res.data);
-      if(res.data.insertedId){
-        toast.success("Tutorial added successful!")
-      }
-    })
-    .catch(err => {
-      toast.success("Something went wrong! Please try again.")
-    })
-    
+      .then(res => {
+        // console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Tutorial added successful!")
+        }
+      })
+      .catch(err => {
+        toast.success("Something went wrong! Please try again.")
+      })
+
   }
   return (
     // <h2 className='te xt-3xl font-bold text-center'>Add a Tutor</h2>

@@ -32,7 +32,7 @@ const router = createBrowserRouter([
         {
           path: "/find-tutors/:category",
           element: <FindTutors></FindTutors>,
-          loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors/${params.category}`)
+          // loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors?${params.category}`)
         },
         {
             path: "/add-tutorial",

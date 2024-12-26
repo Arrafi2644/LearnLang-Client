@@ -11,7 +11,6 @@ const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     // const { user, loading, } = useAuth()
 
-    // console.log(user);
 
     const handleToggle = (e) => {
         if (e.target.checked) {

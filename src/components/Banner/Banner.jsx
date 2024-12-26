@@ -31,7 +31,7 @@ const Banner = () => {
                 <SwiperSlide className='bg-slide1-bg w-full bg-center bg-cover bg-no-repeat'>
                     <div className='text-center h-[500px] flex items-center justify-center flex-col'>
                         <h2 className='text-primary-light font-bold text-4xl text-center'>Master New Languages with Expert Tutors</h2>
-                        <p className=' text-center w-full md:w-4/5 lg:w-3/5 mx-auto font-medium bg-[#ffffff4f] my-2'>Explore personalized learning sessions to achieve your language goals with ease and confidence</p>
+                        <p className=' text-center w-full md:w-4/5 lg:w-3/5 mx-auto font-medium text-text-light bg-[#ffffff4f] my-2'>Explore personalized learning sessions to achieve your language goals with ease and confidence</p>
                         <button className='btn bg-accent-light text-text-light'>Start Learning Now</button>
                     </div>
                 </SwiperSlide>
