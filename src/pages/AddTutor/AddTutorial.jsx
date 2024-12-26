@@ -19,8 +19,8 @@ const AddTutorial = () => {
     const email = form.email.value;
     const image = form.tutorialImage.value;
     const language = form.language.value;
-    const price = form.price.value;
-    const review = form.review.value;
+    const price = parseInt(form.price.value);
+    const review = parseInt(form.review.value);
     const description = form.description.value;
 
     const tutorialInfo = {name, email, image, language, price, review, description, tutorImage}
@@ -84,7 +84,7 @@ const AddTutorial = () => {
               <select name='language' className="select select-bordered w-full" required>
                 {/* <option disabled value="">Select Your Language</option> */}
                 <option value="English">English</option>
-                <option value="Bangla">Bangla</option>
+                <option value="Italian">Italian</option>
                 <option value="Hindi">Hindi</option>
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese">Chinese</option>
@@ -92,6 +92,7 @@ const AddTutorial = () => {
                 <option value="Russian">Russian</option>
                 <option value="korean">korean</option>
                 <option value="Japanese">Japanese</option>
+                <option value="German">German</option>
               </select>
 
             </div>

@@ -90,7 +90,7 @@ const MyTutorials = () => {
           <tbody>
 
             {
-              myTutorials.map(tutorial => <MyTutorialRow key={tutorial.id} handleDeleteTutorial={handleDeleteTutorial} tutorial={tutorial}></MyTutorialRow>)
+              myTutorials.map(tutorial => <MyTutorialRow key={tutorial._id} handleDeleteTutorial={handleDeleteTutorial} tutorial={tutorial}></MyTutorialRow>)
 
             }
 

@@ -45,7 +45,7 @@ const LanguageCategorySection = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
-                    categories.map(category => <Link to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between'>
+                    categories.map((category, index) => <Link key={index} to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between'>
                         <div className='flex gap-3 items-center'>
                             
                             {/* <span className='font-bold text-2xl'><RiEnglishInput></RiEnglishInput></span> */}

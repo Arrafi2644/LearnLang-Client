@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/UseAuth';
 import { Tooltip } from 'react-tooltip';
+import toast from 'react-hot-toast';
 
 
 const Navbar = () => {
-    // const {user, logout} = useAuth()
+    const {user, logout, loading} = useAuth()
     // console.log(user?.photoURL);   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
-    const { user, logOutUser, loading } = useAuth()
+    // const { user, loading, } = useAuth()
 
     const handleToggle = (e) => {
         if (e.target.checked) {
@@ -35,6 +36,7 @@ const Navbar = () => {
     </>
 
 const handleSignout = ()=>{
+    console.log(logout);
     logout()
     .then(res => {
       console.log(res);
@@ -101,7 +103,7 @@ const handleSignout = ()=>{
                         </svg>
                     </label>
                       {
-                        user? <div className='flex gap-1 items-center'>
+                        user?.email? <div className='flex gap-1 items-center'>
                             <img className='h-10 w-10 rounded-full' referrerPolicy='no-referrer' id='userImg' src={user?.photoURL} alt="" />
                         <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
                         <Link onClick={handleSignout} className="btn text-text-light bg-accent-light">Logout</Link>

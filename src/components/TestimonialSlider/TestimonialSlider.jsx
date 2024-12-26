@@ -16,7 +16,7 @@ const TestimonialSlider = () => {
     useEffect(() => {
         axios.get('/testimonials.json')
             .then(res => setReviews(res.data))
-    }, [])
+    }, [reviews])
 
     // console.log(reviews);
 

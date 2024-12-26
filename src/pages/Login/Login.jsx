@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast from 'react-hot-toast';
 import axios from 'axios';
@@ -7,6 +7,12 @@ import axios from 'axios';
 const Login = () => {
 
   const { loginUser, signInWithGoogle, logout } = useAuth();
+  const location = useLocation()
+  const navigate = useNavigate()
+  console.log(location);
+
+  const from = location.state;
+  console.log(from);
 
 
   const handleLogin = (e) => {
@@ -23,6 +29,10 @@ const Login = () => {
       console.log(res.user);
 
       toast.success("Login successfully!")
+      
+      // navigate(from ? form : '/')
+      navigate(location.state ? location.state : '/')
+
     })
     .catch(error => {
       console.log(error)
@@ -37,6 +47,8 @@ const Login = () => {
       console.log(res.user);
   
       toast.success("Login successful!")
+      navigate(location.state ? location.state : '/')
+      
     })
     .catch(error => {
       toast.error("Some thing went wrong! Please try again.")

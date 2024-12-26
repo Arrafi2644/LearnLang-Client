@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast, { Toaster } from 'react-hot-toast';
 
 const SignUp = () => {
 
   const { signupUser, updateUser } = useAuth()
+  const navigate = useNavigate()
   // console.log(signupUser);
 
   const handleSignUpUser = (e) => {
@@ -30,6 +31,7 @@ const SignUp = () => {
         toast.success("User created successfully", {
          position: 'top-center'
         })
+        navigate('/')
       })
       .catch(error => {
         console.log(error);

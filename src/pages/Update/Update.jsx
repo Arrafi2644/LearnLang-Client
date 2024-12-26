@@ -39,8 +39,8 @@ const [allTutorials, setAllTutorials] = useState([])
     const email = form.email.value;
     const image = form.tutorialImage.value;
     const language = form.language.value;
-    const price = form.price.value;
-    const review = form.review.value;
+    const price = parseInt(form.price.value);
+    const review = parseInt(form.review.value);
     const description = form.description.value;
 
     const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
@@ -96,7 +96,7 @@ const [allTutorials, setAllTutorials] = useState([])
               <select name='language' defaultValue={language} className="select select-bordered w-full" required>
                 <option value={language}>{language}</option>
                 <option value="English">English</option>
-                <option value="Bangla">Bangla</option>
+                <option value="Italian">Italian</option>
                 <option value="Hindi">Hindi</option>
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese">Chinese</option>
@@ -104,6 +104,7 @@ const [allTutorials, setAllTutorials] = useState([])
                 <option value="Russian">Russian</option>
                 <option value="korean">korean</option>
                 <option value="Japanese">Japanese</option>
+                <option value="German">German</option>
               </select>
 
             </div>
