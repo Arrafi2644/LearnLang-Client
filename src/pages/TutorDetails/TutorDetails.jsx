@@ -48,7 +48,7 @@ const TutorDetails = () => {
     // console.log("user", user?.email);
 
     const handleMyBookedTutor = (id) => {
-        console.log("Booked tutor", id);
+        // console.log("Booked tutor", id);
 
         // const newTutor = allTutors.find(tutor => tutor._id === id)
         // console.log(newTutor);
@@ -62,11 +62,11 @@ const TutorDetails = () => {
 
         axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 toast.success("Tutor booked successfully!")
             })
             .catch(err => {
-                console.log(err);
+                // console.log(err);
                 toast.error("Something went wrong!")
             })
 
