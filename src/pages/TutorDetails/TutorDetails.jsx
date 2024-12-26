@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData, useLocation, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -8,10 +8,24 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 const TutorDetails = () => {
     const { user } = useAuth()
     const { allTutors } = useAuth()
-    const tutor = useLoaderData()
+    // const tutor = useLoaderData()
     const [bookedTutors, setBookedTutors] = useState([])
     const axiosInstance = useAxiosSecure()
+    const [tutor, setTutor] = useState({})
 
+
+
+    const params = useParams()
+    console.log(params.id);
+    const id = params.id;
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/tutors/${id}`)
+            .then(res => {
+                console.log(res.data);
+                setTutor(res.data)
+            })
+    }, [])
 
     console.log(tutor);
 
@@ -30,8 +44,8 @@ const TutorDetails = () => {
 
     }
 
-    console.log("tutor", email);
-    console.log("user", user?.email);
+    // console.log("tutor", email);
+    // console.log("user", user?.email);
 
     const handleMyBookedTutor = (id) => {
         console.log("Booked tutor", id);
@@ -78,18 +92,18 @@ const TutorDetails = () => {
 
                 <div className='flex items-center gap-2'>
                     <p className='font-medium'>Reviews: </p>
-                        <div className="rating rating-xs">
-                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-                            <input
-                                type="radio"
-                                name="rating-6"
-                                className="mask mask-star-2 bg-orange-400"
-                                defaultChecked />
-                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                        </div>
-                        ({review})
+                    <div className="rating rating-xs">
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                        <input
+                            type="radio"
+                            name="rating-6"
+                            className="mask mask-star-2 bg-orange-400"
+                            defaultChecked />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                    </div>
+                    ({review})
                 </div>
 
 

@@ -1,24 +1,29 @@
 import axios from 'axios';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const MyBookedTutorCard = ({tutor}) => {
     
-    console.log(tutor)
+    // console.log(tutor)
 
     const {_id, name, image, language, price, tutorEmail, email, tutorImage, courseId} = tutor || {};
     console.log(_id);
 
     const handleReview = (id) => {
-        console.log(id);
+        // console.log(id);
 
         // axios.post(`https://learn-lang-server-rose.vercel.app/tutors/${id}`)
 
         axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutor )
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
+            if(res.data.modifiedCount > 0) {
+                toast.success("Review submitted successfully!")
+            }
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
+            toast.success("Review failed!")
         })
         
         // axios.put(`https://learn-lang-server-rose.vercel.app/my-booked-tutors/${id}`, )
