@@ -52,7 +52,12 @@ const FindTutors = () => {
         //     url = `https://learn-lang-server-rose.vercel.app/tutors?category=${category}`
         // }
 
-        axios.get(`https://learn-lang-server-rose.vercel.app/tutors?language=${category}`)
+        let url = `https://learn-lang-server-rose.vercel.app/tutors`
+        if(category){
+            url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+        }
+
+        axios.get(url)
             .then(res => {
                 setTutors(res.data)
                 setAllTutors(res.data)
