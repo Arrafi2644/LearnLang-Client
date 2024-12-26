@@ -65,7 +65,7 @@ const [allTutorials, setAllTutorials] = useState([])
         <div className="text-center lg:text-left w-full ">
           <h1 className="text-3xl font-bold text-center text-text-light">Update Tutorial</h1>
           <p className="py-6 text-center text-text-light">
-            Add tutorials to connect with learners and share your teaching expertise globally.
+            Update tutorials to connect with learners and share your teaching expertise globally.
           </p>
         </div>
         <div className="card bg-base-100 w-full rounded-lg shadow-2xl">
@@ -97,7 +97,7 @@ const [allTutorials, setAllTutorials] = useState([])
                 <option value={language}>{language}</option>
                 <option value="English">English</option>
                 <option value="Italian">Italian</option>
-                <option value="Hindi">Spanish</option>
+                <option value="Hindi">Hindi</option>
                 <option value="Arabic">Arabic</option>
                 <option value="Chinese">Chinese</option>
                 <option value="French">French</option>
