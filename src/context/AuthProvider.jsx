@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.init';
+import axios from 'axios';
 
 export const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
@@ -39,7 +40,25 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
-            setLoading(true)
+            console.log("user", currentUser?.email);
+            if(currentUser?.email){
+                const user = {email: currentUser.email};
+
+                axios.post('https://learn-lang-server-rose.vercel.app/jwt', user, {withCredentials: true})
+                .then(res => {
+                    console.log("Login ", res.data)
+                    setLoading(false)
+            })
+            }
+             else{
+                axios.post('https://learn-lang-server-rose.vercel.app/logout', {}, {withCredentials: true})
+                .then(res => {
+                    console.log("Logout ", res.data)
+                    setLoading(false)
+                })
+             }
+
+
         })
 
         return () => {
@@ -57,7 +76,8 @@ const AuthProvider = ({ children }) => {
         signInWithGoogle,
         logout,
         allTutors,
-        setAllTutors
+        setAllTutors,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>

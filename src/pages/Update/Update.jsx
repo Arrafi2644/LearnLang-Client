@@ -12,7 +12,7 @@ const [allTutorials, setAllTutorials] = useState([])
   const id = (params.id);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/tutors`)
+    fetch(`https://learn-lang-server-rose.vercel.app/tutors`)
     .then(res => res.json())
     .then(data => setAllTutorials(data))
   }, [])
@@ -46,7 +46,7 @@ const [allTutorials, setAllTutorials] = useState([])
     const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
     console.log(tutorialInfo);
 
-    axios.put(`http://localhost:5000/tutors/${id}`, tutorialInfo)
+    axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutorialInfo)
       .then(res => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
@@ -63,8 +63,8 @@ const [allTutorials, setAllTutorials] = useState([])
     <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center">Update Tutorial</h1>
-          <p className="py-6 text-center">
+          <h1 className="text-3xl font-bold text-center text-text-light">Update Tutorial</h1>
+          <p className="py-6 text-center text-text-light">
             Add tutorials to connect with learners and share your teaching expertise globally.
           </p>
         </div>
@@ -92,7 +92,20 @@ const [allTutorials, setAllTutorials] = useState([])
               <label className="label">
                 <span className="label-text">Language</span>
               </label>
-              <input defaultValue={language}  name='language' type="text" placeholder="Language" className="input input-bordered" required />
+              {/* <input name='language' type="text" placeholder="Language" className="input input-bordered" required /> */}
+              <select name='language' defaultValue={language} className="select select-bordered w-full" required>
+                <option value={language}>{language}</option>
+                <option value="English">English</option>
+                <option value="Bangla">Bangla</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Chinese">Chinese</option>
+                <option value="French">French</option>
+                <option value="Russian">Russian</option>
+                <option value="korean">korean</option>
+                <option value="Japanese">Japanese</option>
+              </select>
+
             </div>
             <div className="form-control">
               <label className="label">
@@ -114,7 +127,7 @@ const [allTutorials, setAllTutorials] = useState([])
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">
-              <button className="btn bg-accent-light">Update Tutorial</button>
+              <button className="btn text-text-light bg-accent-light">Update Tutorial</button>
             </div>
           </form>
         </div>

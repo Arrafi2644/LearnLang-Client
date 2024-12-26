@@ -8,7 +8,7 @@ const MyTutorialRow = ({tutorial, handleDeleteTutorial}) => {
     return (
           <tr>
             <th>
-              <img className='w-14 ' src={image} alt="" />
+              <img className='w-14 h-14 object-cover' src={image} alt="" />
             </th>
             <td>
               <div className="flex items-center gap-3">
@@ -22,8 +22,8 @@ const MyTutorialRow = ({tutorial, handleDeleteTutorial}) => {
             <td>{review}</td>
             <td>{description}</td>
             <td>
-            <Link to={`/tutors/${_id}`} className="btn btn-ghost btn-xs bg-yellow-300 mr-1">Update</Link>
-            <Link onClick={()=>handleDeleteTutorial(tutorial._id)} className="btn btn-ghost btn-xs bg-red-300">Delete</Link>
+            <Link to={`/tutors/${_id}`} className="btn btn-ghost btn-xs text-text-light bg-accent-light mr-1">Update</Link>
+            <Link onClick={()=>handleDeleteTutorial(tutorial._id)} className="btn btn-ghost btn-xs text-text-light bg-red-300">Delete</Link>
             </td>
           </tr> )
 

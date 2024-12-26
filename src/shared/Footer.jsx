@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='bg-background-light '>
+        <div className='bg-background-dark text-text-dark '>
             <div className='max-w-7xl w-11/12 mx-auto'>
-                <footer className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-base-content py-10">
+                <footer className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  py-10">
                   <div>
                   <aside >
                         <h4 className='flex font-bold text-3xl mb-2'><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></h4>
@@ -41,7 +41,7 @@ const Footer = () => {
                         <h6 className="footer-title">Stay Connected</h6>
                         <div className="join my-2">
                             <input className="input input-bordered join-item lg:max-w-32 p-4 max-h-10" placeholder="Email" />
-                            <button className=" px-3 cursor-pointer hover:bg-accent-dark transition-all duration-300 join-item rounded-lg bg-accent-light max-h-10">Subscribe</button>
+                            <button className=" px-3 cursor-pointer hover:bg-accent-dark transition-all duration-300 join-item rounded-lg text-text-light  bg-accent-light max-h-10">Subscribe</button>
                         </div>
                         <p className="link link-hover flex gap-1 items-center"><span><FaLocationDot></FaLocationDot></span><span>Jl. Sunset Road No.815, Kuta</span></p>
                         <p className="link link-hover flex gap-1 items-center"><span><HiOutlineMail /></span><span>support@domain.com</span></p>

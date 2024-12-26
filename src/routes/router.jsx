@@ -12,6 +12,7 @@ import SignUp from '../pages/SignUp/SignUp';
 import AddTutorial from '../pages/AddTutor/AddTutorial';
 import TutorDetails from '../pages/TutorDetails/TutorDetails';
 import Update from '../pages/Update/Update';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -26,20 +27,25 @@ const router = createBrowserRouter([
         {
             path: "/find-tutors",
             element: <FindTutors></FindTutors>,
-            loader: ()=>fetch('http://localhost:5000/tutors')
+            loader: ()=>fetch('https://learn-lang-server-rose.vercel.app/tutors')
+        },
+        {
+          path: "/find-tutors/:category",
+          element: <FindTutors></FindTutors>,
+          loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors/${params.category}`)
         },
         {
             path: "/add-tutorial",
-            element: <AddTutorial></AddTutorial>
+            element: <PrivateRoute><AddTutorial></AddTutorial></PrivateRoute>
         },
         {
             path: "/my-tutorials",
-            element: <MyTutorials></MyTutorials>,
+            element: <PrivateRoute><MyTutorials></MyTutorials></PrivateRoute>,
         },
         {
             path: "/my-booked-tutors",
-            element: <MyBookedTutors></MyBookedTutors>,
-            // loader: ()=>fetch(`http://localhost:5000/my-booked-tutors`)
+            element: <PrivateRoute><MyBookedTutors></MyBookedTutors></PrivateRoute>,
+            // loader: ()=>fetch(`https://learn-lang-server-rose.vercel.app/my-booked-tutors`)
         },
         {
           path: "/login",
@@ -51,13 +57,13 @@ const router = createBrowserRouter([
         },
         {
           path: "/tutor/:id",
-          element: <TutorDetails></TutorDetails>,
-          loader: ({params}) => fetch(`http://localhost:5000/tutor/${params.id}`)
+          element: <PrivateRoute><TutorDetails></TutorDetails></PrivateRoute>,
+          loader: ({params}) => fetch(`https://learn-lang-server-rose.vercel.app/tutor/${params.id}`)
         },
         {
           path: '/tutors/:id',
-          element: <Update></Update>,
-          // loader: ({params})=>fetch(`http://localhost:5000/tutors/${params.id}`)
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
+          // loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors/${params.id}`)
         }
       ]
     },

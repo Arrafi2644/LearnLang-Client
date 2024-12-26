@@ -47,7 +47,7 @@ const TutorDetails = () => {
        
 
 
-        axios.post('http://localhost:5000/my-booked-tutors', bookedTutor)
+        axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
         .then(res => {
             console.log(res.data);
             toast.success("Tutor booked successfully!")
@@ -66,7 +66,7 @@ const TutorDetails = () => {
             <div>
                 <img referrerPolicy='no-referrer' className='w-full md:w-60 ' src={tutorImage} alt="" />
             </div>
-            <div className='text-text-light flex flex-col'>
+            <div className=' flex flex-col'>
                 <h3 className='text-lg font-bold'>{name}</h3>
                 <p className='font-medium grow'>Language: {language}</p>
                 <p className='font-medium grow'>Price: ${price}</p>
@@ -76,7 +76,7 @@ const TutorDetails = () => {
               
                 <p className='font-medium grow'>{description}</p>
                
-                <Link to={`/tutor/${_id}`} onClick={()=>handleMyBookedTutor(_id)}  className='btn btn-sm bg-accent-light min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
+                <Link to={`/tutor/${_id}`} onClick={()=>handleMyBookedTutor(_id)}  className='btn btn-sm text-text-light bg-accent-light min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
             </div> 
               
             

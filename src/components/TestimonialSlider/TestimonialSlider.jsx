@@ -18,7 +18,7 @@ const TestimonialSlider = () => {
             .then(res => setReviews(res.data))
     }, [])
 
-    console.log(reviews);
+    // console.log(reviews);
 
     return (
         <>

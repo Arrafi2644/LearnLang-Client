@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -20,6 +21,7 @@ const Login = () => {
     loginUser(email, password)
     .then(res => {
       console.log(res.user);
+
       toast.success("Login successfully!")
     })
     .catch(error => {
@@ -33,6 +35,7 @@ const Login = () => {
     signInWithGoogle()
     .then(res => {
       console.log(res.user);
+  
       toast.success("Login successful!")
     })
     .catch(error => {

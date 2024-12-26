@@ -5,17 +5,25 @@ import { Link, useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
 import MyTutorialRow from '../../components/MyTutorialRow/MyTutorialRow';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MyTutorials = () => {
   const { user } = useAuth()
   const [myTutorials, setMyTutorials] = useState([]);
   const email = (user?.email);
+  const axiosInstance = useAxiosSecure()
   // const myTutorials = useLoaderData();
   useEffect(() => {
-    axios.get(`http://localhost:5000/tutors/user/${email}`)
+    // axios.get(`https://learn-lang-server-rose.vercel.app/tutors/user/${email}`, {withCredentials: true})
+    //   .then(res => {
+    //     setMyTutorials(res.data);
+    //   })
+
+    axiosInstance.get(`/tutors/user/${email}`)
       .then(res => {
         setMyTutorials(res.data);
-      },)
+      })
+
   }, [])
 
   const handleDeleteTutorial = (id) => {
@@ -33,7 +41,7 @@ const MyTutorials = () => {
       if (result.isConfirmed) {
 
 
-        axios.delete(`http://localhost:5000/tutors/myTutorials/${id}`)
+        axios.delete(`https://learn-lang-server-rose.vercel.app/tutors/myTutorials/${id}`)
           .then(res => {
             console.log(res.data);
             if (res.data.deletedCount > 0) {
