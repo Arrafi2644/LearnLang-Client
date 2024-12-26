@@ -51,8 +51,8 @@ const Login = () => {
 
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center">Login Now</h1>
-          <p className="py-6 text-center">
+          <h1 className="text-3xl font-bold text-center text-text-light">Login Now</h1>
+          <p className="py-6 text-center text-text-light">
             Access your account to find and book the best tutors for your learning journey.
           </p>
         </div>
@@ -74,7 +74,7 @@ const Login = () => {
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-accent-light text-text-light">Login</button>
             </div>
           </form>
           <div className='p-8 pt-4'>

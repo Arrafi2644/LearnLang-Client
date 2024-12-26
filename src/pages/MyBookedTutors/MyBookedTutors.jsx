@@ -15,7 +15,7 @@ const MyBookedTutors = () => {
     // console.log(bookedTutors);
 
     useEffect(()=>{
-      axiosInstance.get(`https://learn-lang-server-rose.vercel.app/my-booked-tutors/${email}`)
+      axiosInstance.get(`/my-booked-tutors/${email}`)
       .then(res => {
         console.log(res.data);
         const tutors = res.data;

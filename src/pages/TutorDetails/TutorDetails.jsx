@@ -3,13 +3,14 @@ import { Link, useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const TutorDetails = () => {
     const {user} = useAuth()
     const {allTutors} = useAuth()
     const tutor = useLoaderData()
     const [bookedTutors, setBookedTutors] = useState([])
-  
+   const axiosInstance = useAxiosSecure()
     
 
     console.log(tutor);
@@ -44,10 +45,14 @@ const TutorDetails = () => {
             return;
         }
         
-       
 
+        // axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
+        // .then(res => {
+        //     console.log(res.data);
+        //     toast.success("Tutor booked successfully!")
+        // })
 
-        axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
+          axiosInstance.post('/my-booked-tutors', bookedTutor)
         .then(res => {
             console.log(res.data);
             toast.success("Tutor booked successfully!")
