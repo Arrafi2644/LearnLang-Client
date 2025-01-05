@@ -46,7 +46,7 @@ const [allTutorials, setAllTutorials] = useState([])
     const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
     // console.log(tutorialInfo);
 
-    axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutorialInfo)
+    axios.put(`https://learn-lang-server-rose.vercel.app/tutors/update/${id}`, tutorialInfo)
       .then(res => {
         // console.log(res.data);
         if (res.data.modifiedCount > 0) {
@@ -55,6 +55,7 @@ const [allTutorials, setAllTutorials] = useState([])
       })
       .catch(err => {
         toast.error("Something went wrong! Please try again.")
+        console.log(err);
       })
 
   }
