@@ -12,7 +12,7 @@ const Footer = () => {
                   <div className='flex justify-center text-center md:justify-start md:text-left '>
                   <aside className=''>
                   <Link to='/' className=" flex flex-col font-bold text-xl pl-0 mb-1 cursor-pointer w-max justify-center items-center mx-auto md:ml-0">
-                        <img className='w-6 ' src="/src/assets/lang-footer-logo.png" alt="" />
+                        <img className='w-6 ' src="https://i.ibb.co.com/yBxWXGw/lang-footer-logo.png" alt="" />
                         <span className='text-primary-light'>LEARNLANG</span>
                     </Link>
                         <p>

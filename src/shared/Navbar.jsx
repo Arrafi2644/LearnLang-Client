@@ -80,7 +80,7 @@ const handleSignout = ()=>{
                     </div>
                     {/* <a className=" flex font-bold text-xl pl-0 cursor-pointer"><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></a> */}
                     <Link to='/' className=" flex flex-col items-center font-bold pl-0 cursor-pointer">
-                        <img className='w-6' src="/src/assets/language-logo.png" alt="" />
+                        <img className='w-6' src="https://i.ibb.co.com/PgkCR6S/language-logo.png" alt="" />
                         <span >LEARNLANG</span>
                     </Link>
                 </div>
