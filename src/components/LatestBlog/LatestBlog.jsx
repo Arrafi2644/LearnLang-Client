@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const LatestBlog = () => {
-    const {themColor} = useContext(ThemeContext)
+    const {themeColor} = useContext(ThemeContext)
     return (
         <div className='my-10 md:my-14 mx-4'>
             <h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center'>Latest Blog & Articles</h2>
-            <p className={`text-center mb-6 ${themColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Stay updated with our latest blogs, featuring insights and tips to enhance your learning journey</p>
+            <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Stay updated with our latest blogs, featuring insights and tips to enhance your learning journey</p>
             
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
                 <div className="card card-compact bg-secondary-light text-text-light shadow-xl border rounded-lg">
