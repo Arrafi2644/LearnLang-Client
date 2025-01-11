@@ -69,32 +69,32 @@ const [allTutorials, setAllTutorials] = useState([])
             Update tutorials to connect with learners and share your teaching expertise globally.
           </p>
         </div>
-        <div className="card bg-base-100 w-full rounded-lg shadow-2xl">
+        <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
           <form onSubmit={handleAddTutorial} className="card-body grid grid-cols-2 gap-2">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text text-text-light">Name</span>
               </label>
-              <input defaultValue={user?.displayName} name='name' type="text" placeholder="Name"  readOnly className="input input-bordered" required />
+              <input defaultValue={user?.displayName} name='name' type="text" placeholder="Name"  readOnly className="input input-bordered bg-white text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-text-light">Email</span>
               </label>
-              <input name='email' type="email" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered" required />
+              <input name='email' type="email" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered bg-white text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Tutorial Image</span>
+                <span className="label-text text-text-light">Tutorial Image</span>
               </label>
-              <input defaultValue={tutorImage} name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered" required />
+              <input defaultValue={tutorImage} name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered bg-white text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Language</span>
+                <span className="label-text text-text-light">Language</span>
               </label>
               {/* <input name='language' type="text" placeholder="Language" className="input input-bordered" required /> */}
-              <select name='language' defaultValue={language} className="select select-bordered w-full" required>
+              <select name='language' defaultValue={language} className="select select-bordered w-full bg-white text-text-light" required>
                 <option value={language}>{language}</option>
                 <option value="English">English</option>
                 <option value="Italian">Italian</option>
@@ -111,25 +111,25 @@ const [allTutorials, setAllTutorials] = useState([])
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text text-text-light">Price</span>
               </label>
-              <input defaultValue={price} name='price' type="text" placeholder="Price" className="input input-bordered" required />
+              <input defaultValue={price} name='price' type="text" placeholder="Price" className="input input-bordered bg-white text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Review</span>
+                <span className="label-text text-text-light">Review</span>
               </label>
-              <input name='review' type="text" defaultValue={review} readOnly placeholder="Review" className="input input-bordered" required />
+              <input name='review' type="text" defaultValue={review} readOnly placeholder="Review" className="input input-bordered bg-white text-text-light" required />
             </div>
             <div className="form-control col-span-1 md:col-span-2">
               <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text text-text-light">Description</span>
               </label>
-              <textarea defaultValue={description} name='description' className="textarea textarea-bordered resize-none" placeholder="Description" required></textarea>
+              <textarea defaultValue={description} name='description' className="textarea textarea-bordered resize-none bg-white text-text-light" placeholder="Description" required></textarea>
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">
-              <button className="btn text-text-light bg-accent-light">Update Tutorial</button>
+              <button className="btn text-text-light bg-accent-light hover:bg-accent-dark">Update Tutorial</button>
             </div>
           </form>
         </div>

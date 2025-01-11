@@ -3,22 +3,27 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../hooks/UseAuth';
 import { Tooltip } from 'react-tooltip';
 import toast from 'react-hot-toast';
+import { ThemeContext } from '../context/ThemeContext';
 
 
 const Navbar = () => {
     const {user, logout, loading} = useAuth()
     // console.log(user?.photoURL);   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
+    const {themeColor, setThemeColor} = useContext(ThemeContext)
     // const { user, loading, } = useAuth()
 
 
     const handleToggle = (e) => {
         if (e.target.checked) {
             setTheme("dark")
+            setThemeColor("dark")
         } else {
             setTheme("light")
+            setThemeColor("light")
         }
     }
+    console.log(themeColor);
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -49,7 +54,7 @@ const handleSignout = ()=>{
     }) 
   }
     return (
-        <div className={` ${theme === 'dark' && 'bg-background-dark'} bg-[#EB5A3C] sticky top-0 left-0 z-10`}>
+        <div className={`bg-[#EB5A3C] sticky top-0 left-0 z-10`}>
             <div className="navbar container mx-auto px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -74,13 +79,13 @@ const handleSignout = ()=>{
                         </ul>
                     </div>
                     {/* <a className=" flex font-bold text-xl pl-0 cursor-pointer"><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></a> */}
-                    <a className=" flex flex-col items-center font-bold pl-0 cursor-pointer">
+                    <Link to='/' className=" flex flex-col items-center font-bold pl-0 cursor-pointer">
                         <img className='w-6' src="/src/assets/language-logo.png" alt="" />
-                        <span>LEARNLANG</span>
-                    </a>
+                        <span >LEARNLANG</span>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className={`menu menu-horizontal px-1  ${theme === 'dark' && 'text-text-dark'}`}>
+                    <ul className={`menu menu-horizontal px-1 `}>
                         {links}
                     </ul>
                 </div>
@@ -111,10 +116,10 @@ const handleSignout = ()=>{
                         user?.email? <div className='flex gap-1 items-center'>
                             <img className='h-10 w-10 rounded-full' referrerPolicy='no-referrer' id='userImg' src={user?.photoURL} alt="" />
                         <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
-                        <Link onClick={handleSignout} className="btn text-text-light bg-accent-light">Logout</Link>
+                        <Link onClick={handleSignout} className="btn text-text-light bg-accent-light hover:bg-accent-dark">Logout</Link>
                         </div>
                             :
-                            <Link to='/login' className="btn text-text-light bg-accent-light">Login</Link>
+                            <Link to='/login' className="btn text-text-light bg-accent-light hover:bg-accent-dark">Login</Link>
                       } 
 
 

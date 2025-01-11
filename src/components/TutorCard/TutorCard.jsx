@@ -12,7 +12,7 @@ const TutorCard = ({tutor}) => {
             <div className=' flex flex-col'>
                 <h3 className='text-lg font-bold'>{name}</h3>
                 <p className='font-medium grow'>{language}</p>
-                <Link to={`/tutor/${_id}`}  className='btn text-text-light bg-accent-light min-h-0 h-auto p-3 text-sm'>View Details</Link>
+                <Link to={`/tutor/${_id}`}  className='btn text-text-light bg-accent-light hover:bg-accent-dark min-h-0 h-auto p-3 text-sm'>View Details</Link>
             </div>
         </div>
     );

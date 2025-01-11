@@ -61,9 +61,9 @@ const Login = () => {
  
 
   return (
-    <div className="hero bg-background-light  my-10 md:my-14 rounded-lg mx-4">
+    <div className="hero bg-background-light  my-10 md:my-14 px-4">
 
-      <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
+      <div className="hero-content flex-col md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
           <h1 className="text-3xl md:text-4xl text-primary-light font-bold text-center ">Login Now</h1>
           <p className="py-6 text-center text-text-light">
@@ -71,24 +71,24 @@ const Login = () => {
           </p>
         </div>
         <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
-        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8 bg-accent-light">Login With Google</button>
+        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8 bg-accent-light hover:bg-accent-dark text-text-light">Login With Google</button>
         <div className="divider mx-8">OR</div>
           <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-text-light font-semibold">Email</span>
               </label>
-              <input name='email' type="email" placeholder="Email" className="input input-bordered" required />
+              <input name='email' type="email" placeholder="Email" className="input input-bordered bg-white placeholder:text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text text-text-light font-semibold">Password</span>
               </label>
-              <input name='password' type="password" placeholder="Password" className="input input-bordered" required />
+              <input name='password' type="password" placeholder="Password" className="input input-bordered  bg-white placeholder:text-text-light" required />
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">
-              <button className="btn bg-accent-light text-text-light">Login</button>
+              <button className="btn bg-accent-light hover:bg-accent-dark text-text-light">Login</button>
             </div>
           </form>
           <div className='p-8 pt-4'>

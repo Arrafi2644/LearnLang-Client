@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../shared/Navbar';
 import Footer from '../shared/Footer';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { ThemeContext } from '../context/ThemeContext';
 
 const MainLayout = () => {
+    const {themeColor, setThemeColor} = useContext(ThemeContext)
     return (
-        <div className='font-lato bg-background-light text-text-light'>
+        <div className={`font-lato ${themeColor === "light" ? "bg-background-light" : "bg-background-dark" }  text-text-light `}>
             <Navbar></Navbar>
             <div className='container mx-auto min-h-screen'>
             <Outlet></Outlet>

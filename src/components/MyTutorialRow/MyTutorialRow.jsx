@@ -22,7 +22,7 @@ const MyTutorialRow = ({tutorial, handleDeleteTutorial}) => {
             <td>{review}</td>
             <td>{description}</td>
             <td>
-            <Link to={`/tutors/${_id}`} className="btn btn-ghost btn-xs text-text-light bg-accent-light mr-1">Update</Link>
+            <Link to={`/tutors/${_id}`} className="btn btn-ghost btn-xs text-text-light bg-accent-light hover:bg-accent-dark mr-1">Update</Link>
             <Link onClick={()=>handleDeleteTutorial(tutorial._id)} className="btn btn-ghost btn-xs text-text-light bg-red-300">Delete</Link>
             </td>
           </tr> )

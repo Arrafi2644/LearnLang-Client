@@ -1,17 +1,19 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
 import MyTutorialRow from '../../components/MyTutorialRow/MyTutorialRow';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const MyTutorials = () => {
   const { user } = useAuth()
   const [myTutorials, setMyTutorials] = useState([]);
   const email = (user?.email);
   const axiosInstance = useAxiosSecure()
+  const {themeColor} = useContext(ThemeContext)
   // const myTutorials = useLoaderData();
   useEffect(() => {
     // axios.get(`https://learn-lang-server-rose.vercel.app/tutors/user/${email}`, {withCredentials: true})
@@ -67,14 +69,11 @@ const MyTutorials = () => {
   }
 
 
-
-
-
   return (
     <div className='my-10 md:my-14 mx-4'>
       <h2 className='text-3xl md:text-4xl text-primary-light font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
       <div className="overflow-x-auto ">
-        <table className="table">
+        <table className={`table ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
           {/* head */}
           <thead>
             <tr>

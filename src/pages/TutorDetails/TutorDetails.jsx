@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData, useLocation, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const TutorDetails = () => {
     const { user } = useAuth()
     const { allTutors } = useAuth()
+    const {themColor} = useContext(ThemeContext)
     // const tutor = useLoaderData()
     const [bookedTutors, setBookedTutors] = useState([])
     const axiosInstance = useAxiosSecure()
@@ -85,7 +87,7 @@ const TutorDetails = () => {
             <div>
                 <img referrerPolicy='no-referrer' className='w-full md:w-60 md:h-60 object-cover ' src={tutorImage} alt="" />
             </div>
-            <div className=' flex flex-col'>
+            <div className={`flex flex-col ${themColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
                 <h3 className='text-lg font-bold'>{name}</h3>
                 <p className='font-medium grow'>Language: {language}</p>
                 <p className='font-medium grow'>Price: ${price}</p>
@@ -109,7 +111,7 @@ const TutorDetails = () => {
 
                 <p className='font-medium grow'>{description}</p>
 
-                <Link to={`/tutor/${_id}`} onClick={() => handleMyBookedTutor(_id)} className='btn btn-sm text-text-light bg-accent-light min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
+                <Link to={`/tutor/${_id}`} onClick={() => handleMyBookedTutor(_id)} className='btn btn-sm text-text-light bg-accent-light hover:bg-accent-dark min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
             </div>
 
 
