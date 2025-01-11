@@ -5,7 +5,7 @@ const TutorCard = ({tutor}) => {
     // console.log(tutor);
     const {_id, name, tutorImage, language, price, tutorEmail, email} = tutor;
     return (
-        <div className='flex gap-2 shadow-md p-2'>
+        <div className='flex gap-2 shadow-md p-2 bg-secondary-light'>
             <div>
                 <img className='w-40' src={tutorImage} alt="" />
             </div>

@@ -40,12 +40,12 @@ const LanguageCategorySection = () => {
     // const categories = tutors.filter(tutor => tutor.language)
     // console.log(categories);
     return (
-        <div className='mt-10 md:mt-14'>
-            <h2 className='text-3xl mb-4 font-bold  text-center'>Choose Your Language</h2>
+        <div className='mt-10 md:mt-14 mx-4'>
+            <h2 className=' mb-4 font-bold  text-center text-3xl md:text-4xl text-primary-light'>Choose Your Language</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
-                    categories.map((category, index) => <Link key={index} to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between'>
+                    categories.map((category, index) => <Link key={index} to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between bg-secondary-light'>
                         <div className='flex gap-3 items-center'>
                             
                             {/* <span className='font-bold text-2xl'><RiEnglishInput></RiEnglishInput></span> */}

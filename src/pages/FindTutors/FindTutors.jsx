@@ -77,7 +77,7 @@ const FindTutors = () => {
     return (
         <div className='my-10 md:my-14'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
-                <div><h2 className='text-3xl font-bold'>Find Your Tutor</h2></div>
+                <div><h2 className='text-3xl md:text-4xl text-primary-light font-bold'>Find Your Tutor</h2></div>
                 <div className="join">
                     <div>
                         <div className='flex justify-center'>

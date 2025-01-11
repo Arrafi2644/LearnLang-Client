@@ -23,7 +23,7 @@ const MyBookedTutorCard = ({tutor}) => {
         })
         .catch(err => {
             // console.log(err);
-            toast.success("Review failed!")
+            toast.error("Review failed!")
         })
         
         // axios.put(`https://learn-lang-server-rose.vercel.app/my-booked-tutors/${id}`, )

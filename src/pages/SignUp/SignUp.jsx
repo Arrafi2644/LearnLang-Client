@@ -46,17 +46,17 @@ const SignUp = () => {
   }
 
   return (
-    <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">
+    <div className="hero bg-background-light my-10 md:my-14 rounded-lg mx-4">
 
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center text-text-light">Signup Now</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-primary-light">Signup Now</h1>
           <p className="py-6 text-center text-text-light">
             Create an account to connect with expert tutors and start your learning adventure.
           </p>
         </div>
-        <div className="card bg-base-100 w-full rounded-lg shadow-2xl">
-           <button className="btn my-6 mx-8">Signup With Google</button>
+        <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
+           <button className="btn my-6 mx-8 bg-accent-light">Signup With Google</button>
            <div className="divider mx-8">OR</div>
           <form onSubmit={handleSignUpUser} className="card-body">
             <div className="form-control">

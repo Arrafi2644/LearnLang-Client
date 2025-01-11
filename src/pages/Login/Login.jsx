@@ -61,19 +61,19 @@ const Login = () => {
  
 
   return (
-    <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">
+    <div className="hero bg-background-light  my-10 md:my-14 rounded-lg mx-4">
 
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center text-text-light">Login Now</h1>
+          <h1 className="text-3xl md:text-4xl text-primary-light font-bold text-center ">Login Now</h1>
           <p className="py-6 text-center text-text-light">
             Access your account to find and book the best tutors for your learning journey.
           </p>
         </div>
-        <div className="card bg-base-100 w-full rounded-lg shadow-2xl">
-        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8">Login With Google</button>
+        <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
+        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8 bg-accent-light">Login With Google</button>
         <div className="divider mx-8">OR</div>
-          <form onSubmit={handleLogin} className="card-body">
+          <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>

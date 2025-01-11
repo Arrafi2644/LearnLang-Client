@@ -48,21 +48,21 @@ const AddTutorial = () => {
   return (
     // <h2 className='te xt-3xl font-bold text-center'>Add a Tutor</h2>
 
-    <div className="hero bg-background-light  my-10 md:my-14 rounded-lg min-h-screen">
+    <div className="hero bg-background-light  my-10 md:my-14 rounded-lg min-h-screen mx-4">
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center text-text-light">Add Tutorial</h1>
+          <h1 className="text-3xl md:text-4xl text-primary-light font-bold text-center">Add Tutorial</h1>
           <p className="py-6 text-center text-text-light">
             Add tutorials to connect with learners and share your teaching expertise globally.
           </p>
         </div>
-        <div className="card bg-base-100 w-full rounded-lg shadow-2xl">
-          <form onSubmit={handleAddTutorial} className="card-body grid grid-cols-2 gap-2">
+        <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
+          <form onSubmit={handleAddTutorial} className="card-body grid grid-cols-2 gap-2 text-text-light">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
-              <input className="" name='name' type="text" placeholder="Name" value={user?.displayName} readOnly className="input input-bordered" required />
+              <input className="text-text-light" name='name' type="text" placeholder="Name" value={user?.displayName} readOnly className="input input-bordered" required />
             </div>
             <div className="form-control">
               <label className="label">
@@ -74,7 +74,7 @@ const AddTutorial = () => {
               <label className="label">
                 <span className="label-text">Tutorial Image</span>
               </label>
-              <input name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered" required />
+              <input name='tutorialImage' type="url" placeholder="Tutorial image url" className="input input-bordered text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
@@ -83,6 +83,7 @@ const AddTutorial = () => {
               {/* <input name='language' type="text" placeholder="Language" className="input input-bordered" required /> */}
               <select name='language' className="select select-bordered w-full" required>
                 {/* <option disabled value="">Select Your Language</option> */}
+                <option  disabled>Select a language</option>
                 <option value="English">English</option>
                 <option value="Italian">Italian</option>
                 <option value="Hindi">Hindi</option>
@@ -100,19 +101,19 @@ const AddTutorial = () => {
               <label className="label">
                 <span className="label-text">Price</span>
               </label>
-              <input name='price' type="text" placeholder="Price" className="input input-bordered" required />
+              <input name='price' type="text" placeholder="Price" className="input input-bordered text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Review</span>
               </label>
-              <input name='review' type="text" defaultValue={0} readOnly placeholder="Review" className="input input-bordered" required />
+              <input name='review' type="text" defaultValue={0} readOnly placeholder="Review" className="input input-bordered text-text-light" required />
             </div>
             <div className="form-control col-span-1 md:col-span-2">
               <label className="label">
                 <span className="label-text">Description</span>
               </label>
-              <textarea name='description' className="textarea textarea-bordered resize-none" placeholder="Description" required></textarea>
+              <textarea name='description' className="textarea textarea-bordered resize-none text-text-light" placeholder="Description" required></textarea>
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">

@@ -44,7 +44,7 @@ const States = () => {
     }, []); // Empty dependency array to ensure the effect runs only once
 
     return (
-        <div className='mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2'>
+        <div className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 bg-[#E7D283]' >
             <div className='text-center '>
                 <h2 className='font-bold text-4xl '>{tutors.length}</h2>
                 <p className='font-medium '>Tutor</p>

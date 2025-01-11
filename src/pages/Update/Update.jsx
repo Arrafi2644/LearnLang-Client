@@ -61,10 +61,10 @@ const [allTutorials, setAllTutorials] = useState([])
   }
 
   return (
-    <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen">
+    <div className="hero bg-background-light my-10 md:my-14 rounded-lg min-h-screen mx-4">
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
-          <h1 className="text-3xl font-bold text-center text-text-light">Update Tutorial</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-primary-light">Update Tutorial</h1>
           <p className="py-6 text-center text-text-light">
             Update tutorials to connect with learners and share your teaching expertise globally.
           </p>

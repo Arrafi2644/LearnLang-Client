@@ -49,8 +49,8 @@ const handleSignout = ()=>{
     }) 
   }
     return (
-        <div className={` ${theme === 'dark' && 'bg-background-dark'}`}>
-            <div className="navbar max-w-7xl w-11/12 mx-auto px-0">
+        <div className={` ${theme === 'dark' && 'bg-background-dark'} bg-[#EB5A3C] sticky top-0 left-0 z-10`}>
+            <div className="navbar container mx-auto px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0">
@@ -73,7 +73,11 @@ const handleSignout = ()=>{
                             {links}
                         </ul>
                     </div>
-                    <a className=" flex font-bold text-xl pl-0 cursor-pointer"><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></a>
+                    {/* <a className=" flex font-bold text-xl pl-0 cursor-pointer"><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></a> */}
+                    <a className=" flex flex-col items-center font-bold pl-0 cursor-pointer">
+                        <img className='w-6' src="/src/assets/language-logo.png" alt="" />
+                        <span>LEARNLANG</span>
+                    </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className={`menu menu-horizontal px-1  ${theme === 'dark' && 'text-text-dark'}`}>

@@ -3,8 +3,8 @@ import TestimonialSlider from '../TestimonialSlider/TestimonialSlider';
 
 const Testimonial = () => {
     return (
-        <div className='my-10 md:my-14'>
-            <h2 className='text-3xl font-bold text-center'>Testimonial</h2>
+        <div className='my-10 md:my-14 mx-4'>
+            <h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center'>Testimonial</h2>
             <p className='text-center mb-6'>Discover what our users say about their learning experiences with expert tutors on learnLang</p>
 
             {/* Testimonial slider  */}

@@ -15,7 +15,7 @@ export default {
           dark: '#6FCF97'
         },
         background: {
-          light: '#F5F5F5',
+          light: '#EDF4C2',
           dark: '#121212'
         },
         text: {
@@ -23,8 +23,14 @@ export default {
           dark: '#E0E0E0'
         },
         accent: {
-          light: '#F4A261',
+          light: '#DF9755',
           dark: '#FFD166'
+        },
+        primary: {
+          light: '#EB5A3C'
+        },
+        secondary: {
+          light: '#E7D283'
         }
 
       },

@@ -7,11 +7,14 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='bg-background-dark text-text-dark mt-10 md:mt-10 '>
-            <div className='max-w-7xl w-11/12 mx-auto'>
+            <div className='container px-4 mx-auto'>
                 <footer className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  py-10">
                   <div>
                   <aside >
-                        <h4 className='flex font-bold text-3xl mb-2'><span className='text-blue-500'>Learn</span><span className='text-green-500'>Lang</span></h4>
+                  <a className=" flex flex-col font-bold text-xl pl-0 cursor-pointer">
+                        {/* <img className='w-6' src="/src/assets/language-logo.png" alt="" /> */}
+                        <span className='text-primary-light'>LEARNLANG</span>
+                    </a>
                         <p>
                             Connect with expert tutors globally <br />  for  personalized learning and language mastery.
                         </p>

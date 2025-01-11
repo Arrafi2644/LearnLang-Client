@@ -39,7 +39,7 @@ const TestimonialSlider = () => {
                 <div>
                     {
                         reviews.map((review, index) => <SwiperSlide key={index} >
-                           <div className='flex flex-col gap-1 justify-center items-center' >
+                           <div className='flex flex-col gap-1 justify-center items-center bg-secondary-light p-6' >
                            <img className='w-28 h-28 border object-cover rounded-full' src={review.userImage} alt="" />
                             <h3 className='font-semibold'>{review.name}</h3>
                             <p className='text-sm'>Student: {review.learnedLanguage}</p>

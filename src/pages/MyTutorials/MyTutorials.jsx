@@ -71,9 +71,9 @@ const MyTutorials = () => {
 
 
   return (
-    <div className='my-10 md:my-14'>
-      <h2 className='text-3xl font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
-      <div className="overflow-x-auto">
+    <div className='my-10 md:my-14 mx-4'>
+      <h2 className='text-3xl md:text-4xl text-primary-light font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
+      <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
           <thead>
