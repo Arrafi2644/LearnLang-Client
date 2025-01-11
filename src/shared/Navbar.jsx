@@ -36,9 +36,14 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/find-tutors'>Find Tutor</NavLink></li>
-        <li><NavLink to='/add-tutorial'>Add Tutorial</NavLink></li>
+
+        {
+            user && <>
+            <li><NavLink to='/add-tutorial'>Add Tutorial</NavLink></li>
         <li><NavLink to='/my-tutorials'>My Tutorials</NavLink></li>
         <li><NavLink to='/my-booked-tutors'>My Booked Tutors</NavLink></li>
+            </>
+        }
     </>
 
 const handleSignout = ()=>{
