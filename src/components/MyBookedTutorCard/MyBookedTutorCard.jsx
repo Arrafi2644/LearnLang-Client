@@ -5,7 +5,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 const MyBookedTutorCard = ({tutor}) => {
     
-    const {themColor} = useContext(ThemeContext)
+    const {themeColor} = useContext(ThemeContext)
     // console.log(tutor)
 
     const {_id, name, image, language, price, tutorEmail, email, tutorImage, courseId} = tutor || {};
@@ -39,7 +39,7 @@ const MyBookedTutorCard = ({tutor}) => {
 
     }
     return (
-        <div className={`flex gap-2 shadow-md p-2 ${themColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
+        <div className={`flex gap-2 shadow-md p-2 ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
             <div>
                 <img className='w-48 h-48 object-cover' src={tutorImage} alt="" />
             </div>

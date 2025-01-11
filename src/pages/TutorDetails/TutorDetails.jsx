@@ -9,7 +9,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 const TutorDetails = () => {
     const { user } = useAuth()
     const { allTutors } = useAuth()
-    const {themColor} = useContext(ThemeContext)
+    const {themeColor} = useContext(ThemeContext)
     // const tutor = useLoaderData()
     const [bookedTutors, setBookedTutors] = useState([])
     const axiosInstance = useAxiosSecure()
@@ -87,7 +87,7 @@ const TutorDetails = () => {
             <div>
                 <img referrerPolicy='no-referrer' className='w-full md:w-60 md:h-60 object-cover ' src={tutorImage} alt="" />
             </div>
-            <div className={`flex flex-col ${themColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
+            <div className={`flex flex-col ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
                 <h3 className='text-lg font-bold'>{name}</h3>
                 <p className='font-medium grow'>Language: {language}</p>
                 <p className='font-medium grow'>Price: ${price}</p>
