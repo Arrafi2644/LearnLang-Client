@@ -21,38 +21,6 @@
 - **Database:** Firebase for authentication and MongoDB for data management.
 
 
-Here is a README.md file for your LearnLang project:
-
-markdown
-Copy
-Edit
-# LearnLang
-
-LearnLang is a **language learning web application** built with React, Firebase, and Vite. This project provides an interactive way to learn languages with a modern and responsive UI.
-
-## 🚀 Features
-
-- **Vite-Powered**: Fast development and optimized production builds.
-- **Firebase Authentication**: Secure user authentication and data storage.
-- **React Router**: Seamless navigation between pages.
-- **Tailwind CSS & DaisyUI**: Fully responsive and modern design.
-- **React Toast Notifications**: User-friendly notifications.
-- **SweetAlert2**: Interactive alerts for better user experience.
-- **Swiper.js**: Smooth and interactive sliders.
-
----
-
-## 📑 Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Scripts](#scripts)
-- [License](#license)
-
----
-
 ## 🛠 Installation
 
 1. **Clone the repository**:
