@@ -27,12 +27,12 @@ const router = createBrowserRouter([
         {
             path: "/find-tutors",
             element: <FindTutors></FindTutors>,
-            loader: ()=>fetch('https://learn-lang-server-rose.vercel.app/tutors')
+            loader: ()=>fetch('http://localhost:5000/tutors')
         },
         {
           path: "/find-tutors/:category",
           element: <FindTutors></FindTutors>,
-          // loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors?${params.category}`)
+          // loader: ({params})=>fetch(`http://localhost:5000/tutors?${params.category}`)
         },
         {
             path: "/add-tutorial",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         {
             path: "/my-booked-tutors",
             element: <PrivateRoute><MyBookedTutors></MyBookedTutors></PrivateRoute>,
-            // loader: ()=>fetch(`https://learn-lang-server-rose.vercel.app/my-booked-tutors`)
+            // loader: ()=>fetch(`http://localhost:5000/my-booked-tutors`)
         },
         {
           path: "/login",
@@ -58,12 +58,12 @@ const router = createBrowserRouter([
         {
           path: "/tutor/:id",
           element: <PrivateRoute><TutorDetails></TutorDetails></PrivateRoute>,
-          // loader: ({params}) => fetch(`https://learn-lang-server-rose.vercel.app/tutor/${params.id}`)
+          // loader: ({params}) => fetch(`http://localhost:5000/tutor/${params.id}`)
         },
         {
           path: '/tutors/:id',
           element: <PrivateRoute><Update></Update></PrivateRoute>,
-          // loader: ({params})=>fetch(`https://learn-lang-server-rose.vercel.app/tutors/${params.id}`)
+          // loader: ({params})=>fetch(`http://localhost:5000/tutors/${params.id}`)
         }
       ]
     },

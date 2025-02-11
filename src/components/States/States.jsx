@@ -9,7 +9,7 @@ const States = () => {
 
     useEffect(() => {
         // Fetch the data only once
-        axios.get(`https://learn-lang-server-rose.vercel.app/tutors`)
+        axios.get(`http://localhost:5000/tutors`)
             .then(res => {
                 setTutorials(res.data);
 

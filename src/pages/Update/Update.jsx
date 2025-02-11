@@ -12,7 +12,7 @@ const [allTutorials, setAllTutorials] = useState([])
   const id = (params.id);
 
   useEffect(()=>{
-    fetch(`https://learn-lang-server-rose.vercel.app/tutors`)
+    fetch(`http://localhost:5000/tutors`)
     .then(res => res.json())
     .then(data => setAllTutorials(data))
   }, [])
@@ -20,7 +20,7 @@ const [allTutorials, setAllTutorials] = useState([])
   // console.log(allTutorials);
 
   const tutorial = allTutorials.find(tutorial => tutorial._id === id);
-  // console.log(tutorial);
+  console.log(tutorial);
 
   const {_id, name, email, language, price, review, description, image, tutorImage} = tutorial || {};
 
@@ -45,10 +45,11 @@ const [allTutorials, setAllTutorials] = useState([])
 
     const tutorialInfo = { name, email, image, price, language, review, description, tutorImage }
     // console.log(tutorialInfo);
+    console.log(id);
 
-    axios.put(`https://learn-lang-server-rose.vercel.app/tutors/update/${id}`, tutorialInfo)
+    axios.put(`http://localhost:5000/tutors/update/${id}`, tutorialInfo)
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         if (res.data.modifiedCount > 0) {
           toast.success("Tutorial updated successful!")
         }

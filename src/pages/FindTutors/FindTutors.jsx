@@ -18,7 +18,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/${search}`)
+    //     axios.get(`http://localhost:5000/tutors/${search}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -27,7 +27,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/language/${category}`)
+    //     axios.get(`http://localhost:5000/tutors/language/${category}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -35,7 +35,7 @@ const FindTutors = () => {
     // }, [category])
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors`)
+    //     axios.get(`http://localhost:5000/tutors`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -43,18 +43,18 @@ const FindTutors = () => {
     // }, [])
 
     useEffect(() => {
-        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
-        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+        // let url = `http://localhost:5000/tutors?language=${category}`
+        // let url = `http://localhost:5000/tutors?language=${category}`
         // if (search) {
-        //     url = `https://learn-lang-server-rose.vercel.app/tutors?search=${search}`
+        //     url = `http://localhost:5000/tutors?search=${search}`
         // }
         // if (category) {
-        //     url = `https://learn-lang-server-rose.vercel.app/tutors?category=${category}`
+        //     url = `http://localhost:5000/tutors?category=${category}`
         // }
 
-        let url = `https://learn-lang-server-rose.vercel.app/tutors`
+        let url = `http://localhost:5000/tutors`
         if(category){
-            url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+            url = `http://localhost:5000/tutors?language=${category}`
         }
 
         axios.get(url)

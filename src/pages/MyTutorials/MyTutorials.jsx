@@ -16,7 +16,7 @@ const MyTutorials = () => {
   const {themeColor} = useContext(ThemeContext)
   // const myTutorials = useLoaderData();
   useEffect(() => {
-    // axios.get(`https://learn-lang-server-rose.vercel.app/tutors/user/${email}`, {withCredentials: true})
+    // axios.get(`http://localhost:5000/tutors/user/${email}`, {withCredentials: true})
     //   .then(res => {
     //     setMyTutorials(res.data);
     //   })
@@ -43,7 +43,7 @@ const MyTutorials = () => {
       if (result.isConfirmed) {
 
 
-        axios.delete(`https://learn-lang-server-rose.vercel.app/tutors/myTutorials/${id}`)
+        axios.delete(`http://localhost:5000/tutors/myTutorials/${id}`)
           .then(res => {
             // console.log(res.data);
             if (res.data.deletedCount > 0) {
