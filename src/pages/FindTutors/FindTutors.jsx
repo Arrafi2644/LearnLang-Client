@@ -56,6 +56,8 @@ const FindTutors = () => {
         if(category){
             url = `http://localhost:5000/tutors?language=${category}`
         }
+        
+        
 
         axios.get(url)
             .then(res => {
@@ -66,6 +68,21 @@ const FindTutors = () => {
 
     }, [setTutors, category])
 
+
+    const handleSearch = (e) => {
+        console.log(e.target.value);
+        const keyword = e.target.value;
+          
+        axios.get(`http://localhost:5000/tutors/search/language/${keyword}`)
+        .then(res => {
+            console.log(res.data);
+            setTutors(res.data)
+
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
 
 
     const handleSort = () => {
@@ -82,6 +99,7 @@ const FindTutors = () => {
 
     }
 
+
     return (
         <div className='my-10 md:my-14 px-4 container mx-auto'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
@@ -91,21 +109,28 @@ const FindTutors = () => {
                 <div className="join">
                     <div>
                         <div className='flex justify-center'>
-                            <input onChange={(e) => setSearch(e.target.value)} className="input input-bordered join-item bg-white" placeholder="Search" />
+                            <input onChange={(e) => handleSearch(e)} className="input input-bordered join-item bg-white" placeholder="Search" />
                             <button className="btn join-item text-text-light bg-accent-light hover:bg-accent-dark">Search</button>
                         </div>
                     </div>
                 </div>
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
+            {
+                tutors.length > 0 ? <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
                 {
                     tutors.map(tutor => <TutorCard key={tutor._id}
                         tutor={tutor}
                     // handleTutorDetails={handleTutorDetails}
                     ></TutorCard>)
+                    
                 }
             </div>
+             : <div className='w-f'>
+            <h2 className='text-xl font-bold text-center'>No tutor found for this language.</h2>
+        </div>
+            }
+            
         </div>
     );
 };
