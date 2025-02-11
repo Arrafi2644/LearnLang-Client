@@ -10,7 +10,7 @@ const MainLayout = () => {
     return (
         <div className={`font-lato ${themeColor === "light" ? "bg-background-light" : "bg-background-dark" }  text-text-light `}>
             <Navbar></Navbar>
-            <div className='container mx-auto min-h-screen'>
+            <div >
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

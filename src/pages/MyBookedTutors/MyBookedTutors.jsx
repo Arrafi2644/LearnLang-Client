@@ -29,7 +29,7 @@ const MyBookedTutors = () => {
     }, [])
 
     return (
-        <div className='my-10 md:my-14 mx-4'>
+        <div className='my-10 md:my-14 px-4 container mx-auto'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
                 <div><h2 className='text-3xl md:text-4xl text-primary-light font-bold'>Your Booked Tutors</h2></div>
             

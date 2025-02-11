@@ -10,6 +10,7 @@ const Home = () => {
         <div>
             {/* Banner  */}
             <Banner></Banner>
+            <div className='container mx-auto min-h-screen'>
             {/* States  */}
             <States></States>
             {/* Language Category  */}
@@ -18,6 +19,7 @@ const Home = () => {
             <Testimonial></Testimonial>
             {/* blog */}
             <LatestBlog></LatestBlog>
+            </div>
         </div>
     );
 };

@@ -70,7 +70,7 @@ const MyTutorials = () => {
 
 
   return (
-    <div className='my-10 md:my-14 mx-4'>
+    <div className='my-10 md:my-14 px-4 container mx-auto'>
       <h2 className='text-3xl md:text-4xl text-primary-light font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
       <div className="overflow-x-auto ">
         <table className={`table ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>

@@ -41,7 +41,7 @@ const {themeColor} = useContext(ThemeContext)
   return (
     // <h2 className='te xt-3xl font-bold text-center'>Add a Tutor</h2>
 
-    <div className="hero  my-10 md:my-14 rounded-lg min-h-screen mx-4">
+    <div className="hero  my-10 md:my-14 rounded-lg min-h-screen px-4 container mx-auto">
       <div className={`hero-content flex-col w-full md:w-11/12 lg:w-4/5 text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>
         <div className="text-center lg:text-left w-full ">
           <h1 className="text-3xl md:text-4xl text-primary-light font-bold text-center">Add Tutorial</h1>
