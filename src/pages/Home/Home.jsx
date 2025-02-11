@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <div>
             {/* Banner  */}
-            <Banner></Banner>
             <div className='container mx-auto min-h-screen'>
+            <Banner></Banner>
             {/* States  */}
             <States></States>
             {/* Language Category  */}
