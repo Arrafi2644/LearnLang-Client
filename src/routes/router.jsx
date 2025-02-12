@@ -13,6 +13,7 @@ import AddTutorial from '../pages/AddTutor/AddTutorial';
 import TutorDetails from '../pages/TutorDetails/TutorDetails';
 import Update from '../pages/Update/Update';
 import PrivateRoute from './PrivateRoute';
+import Blogs from '../pages/Blogs/Blogs';
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
           path: "/find-tutors/:category",
           element: <FindTutors></FindTutors>,
           // loader: ({params})=>fetch(`http://localhost:5000/tutors?${params.category}`)
+        },
+        {
+          path: "/blogs",
+          element: <Blogs></Blogs>
         },
         {
             path: "/add-tutorial",

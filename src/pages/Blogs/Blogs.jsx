@@ -1,22 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
-const LatestBlog = () => {
-     const {themeColor} = useContext(ThemeContext)
-        const [blogs, setBlogs] = useState([])
-    
-        useEffect(()=>{
-            fetch('blogs.json')
-            .then(res => res.json())
-            .then(data => {
-                const latest = data.slice(0, 3);
-                setBlogs(latest)
-            })
-    
-        }, [])
+const Blogs = () => {
+    const {themeColor} = useContext(ThemeContext)
+    const [blogs, setBlogs] = useState([])
+
+    useEffect(()=>{
+        fetch('blogs.json')
+        .then(res => res.json())
+        .then(data => setBlogs(data))
+
+    }, [])
     return (
-        <div className='my-10 md:my-14 mx-4'>
-            <h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center'>Latest Blog & Articles</h2>
+        <div className='my-10 md:my-14 px-4 container mx-auto'>
+                     <h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center'>Latest Blog & Articles</h2>
             <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Stay updated with our latest blogs, featuring insights and tips to enhance your learning journey</p>
             
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
@@ -41,4 +38,4 @@ const LatestBlog = () => {
     );
 };
 
-export default LatestBlog;
+export default Blogs;
