@@ -12,7 +12,7 @@ const [allTutorials, setAllTutorials] = useState([])
   const id = (params.id);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/tutors`)
+    fetch(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors`)
     .then(res => res.json())
     .then(data => setAllTutorials(data))
   }, [])
@@ -47,7 +47,7 @@ const [allTutorials, setAllTutorials] = useState([])
     // console.log(tutorialInfo);
     console.log(id);
 
-    axios.put(`http://localhost:5000/tutors/update/${id}`, tutorialInfo)
+    axios.put(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/update/${id}`, tutorialInfo)
       .then(res => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {

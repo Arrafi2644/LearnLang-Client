@@ -28,12 +28,12 @@ const router = createBrowserRouter([
         {
             path: "/find-tutors",
             element: <FindTutors></FindTutors>,
-            loader: ()=>fetch('http://localhost:5000/tutors')
+            loader: ()=>fetch('https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors')
         },
         {
           path: "/find-tutors/:category",
           element: <FindTutors></FindTutors>,
-          // loader: ({params})=>fetch(`http://localhost:5000/tutors?${params.category}`)
+          // loader: ({params})=>fetch(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?${params.category}`)
         },
         {
           path: "/blogs",
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         {
             path: "/my-booked-tutors",
             element: <PrivateRoute><MyBookedTutors></MyBookedTutors></PrivateRoute>,
-            // loader: ()=>fetch(`http://localhost:5000/my-booked-tutors`)
+            // loader: ()=>fetch(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/my-booked-tutors`)
         },
         {
           path: "/login",
@@ -63,12 +63,12 @@ const router = createBrowserRouter([
         {
           path: "/tutor/:id",
           element: <PrivateRoute><TutorDetails></TutorDetails></PrivateRoute>,
-          // loader: ({params}) => fetch(`http://localhost:5000/tutor/${params.id}`)
+          // loader: ({params}) => fetch(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutor/${params.id}`)
         },
         {
           path: '/tutors/:id',
           element: <PrivateRoute><Update></Update></PrivateRoute>,
-          // loader: ({params})=>fetch(`http://localhost:5000/tutors/${params.id}`)
+          // loader: ({params})=>fetch(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/${params.id}`)
         }
       ]
     },

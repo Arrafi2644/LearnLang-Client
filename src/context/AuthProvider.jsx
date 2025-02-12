@@ -44,14 +44,14 @@ const AuthProvider = ({ children }) => {
             if(currentUser?.email){
                 const user = {email: currentUser.email};
 
-                axios.post('http://localhost:5000/jwt', user, {withCredentials: true})
+                axios.post('https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/jwt', user, {withCredentials: true})
                 .then(res => {
                     // console.log("Login ", res.data)
                     setLoading(false)
             })
             }
              else{
-                axios.post('http://localhost:5000/logout', {}, {withCredentials: true})
+                axios.post('https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/logout', {}, {withCredentials: true})
                 .then(res => {
                     // console.log("Logout ", res.data)
                     setLoading(false)

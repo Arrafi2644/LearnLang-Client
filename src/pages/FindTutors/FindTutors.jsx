@@ -18,7 +18,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`http://localhost:5000/tutors/${search}`)
+    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/${search}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -27,7 +27,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`http://localhost:5000/tutors/language/${category}`)
+    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/language/${category}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -35,7 +35,7 @@ const FindTutors = () => {
     // }, [category])
 
     // useEffect(() => {
-    //     axios.get(`http://localhost:5000/tutors`)
+    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -43,18 +43,18 @@ const FindTutors = () => {
     // }, [])
 
     useEffect(() => {
-        // let url = `http://localhost:5000/tutors?language=${category}`
-        // let url = `http://localhost:5000/tutors?language=${category}`
+        // let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
+        // let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
         // if (search) {
-        //     url = `http://localhost:5000/tutors?search=${search}`
+        //     url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?search=${search}`
         // }
         // if (category) {
-        //     url = `http://localhost:5000/tutors?category=${category}`
+        //     url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?category=${category}`
         // }
 
-        let url = `http://localhost:5000/tutors`
+        let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors`
         if(category){
-            url = `http://localhost:5000/tutors?language=${category}`
+            url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
         }
         
         
@@ -73,7 +73,7 @@ const FindTutors = () => {
         console.log(e.target.value);
         const keyword = e.target.value;
           
-        axios.get(`http://localhost:5000/tutors/search/language/${keyword}`)
+        axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/search/language/${keyword}`)
         .then(res => {
             console.log(res.data);
             setTutors(res.data)
