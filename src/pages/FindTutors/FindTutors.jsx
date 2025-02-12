@@ -18,7 +18,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/${search}`)
+    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/${search}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -27,7 +27,7 @@ const FindTutors = () => {
 
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/language/${category}`)
+    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors/language/${category}`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -35,7 +35,7 @@ const FindTutors = () => {
     // }, [category])
 
     // useEffect(() => {
-    //     axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors`)
+    //     axios.get(`https://learn-lang-server-rose.vercel.app/tutors`)
     //         .then(res => {
     //             setTutors(res.data);
     //             setAllTutors(res.data);
@@ -43,18 +43,18 @@ const FindTutors = () => {
     // }, [])
 
     useEffect(() => {
-        // let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
-        // let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
+        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
+        // let url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
         // if (search) {
-        //     url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?search=${search}`
+        //     url = `https://learn-lang-server-rose.vercel.app/tutors?search=${search}`
         // }
         // if (category) {
-        //     url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?category=${category}`
+        //     url = `https://learn-lang-server-rose.vercel.app/tutors?category=${category}`
         // }
 
-        let url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors`
+        let url = `https://learn-lang-server-rose.vercel.app/tutors`
         if(category){
-            url = `https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors?language=${category}`
+            url = `https://learn-lang-server-rose.vercel.app/tutors?language=${category}`
         }
         
         
@@ -73,7 +73,7 @@ const FindTutors = () => {
         console.log(e.target.value);
         const keyword = e.target.value;
           
-        axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/search/language/${keyword}`)
+        axios.get(`https://learn-lang-server-rose.vercel.app/tutors/search/language/${keyword}`)
         .then(res => {
             console.log(res.data);
             setTutors(res.data)
@@ -101,7 +101,7 @@ const FindTutors = () => {
 
 
     return (
-        <div className='my-10 md:my-14 px-4 container mx-auto'>
+        <div className='my-10 md:my-14 px-4 container mx-auto min-h-screen'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
                 <div><h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center md:text-left'>Find Your Tutor</h2></div>
                 <div className='flex gap-2 flex-wrap justify-center'>

@@ -15,9 +15,9 @@ const MyBookedTutorCard = ({tutor}) => {
     const handleReview = (id) => {
         // console.log(id);
 
-        // axios.post(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/${id}`)
+        // axios.post(`https://learn-lang-server-rose.vercel.app/tutors/${id}`)
 
-        axios.put(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/${id}`, tutor )
+        axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutor )
         .then(res => {
             // console.log(res.data);
             if(res.data.modifiedCount > 0) {
@@ -29,7 +29,7 @@ const MyBookedTutorCard = ({tutor}) => {
             toast.error("Review failed!")
         })
         
-        // axios.put(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/my-booked-tutors/${id}`, )
+        // axios.put(`https://learn-lang-server-rose.vercel.app/my-booked-tutors/${id}`, )
         // .then(res => {
         //         console.log(res.data);
         //     })

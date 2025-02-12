@@ -4,7 +4,7 @@ import useAuth from './UseAuth';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app',
+    baseURL: 'https://learn-lang-server-rose.vercel.app',
     withCredentials: true
 })
 

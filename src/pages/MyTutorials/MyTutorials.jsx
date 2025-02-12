@@ -16,7 +16,7 @@ const MyTutorials = () => {
   const {themeColor} = useContext(ThemeContext)
   // const myTutorials = useLoaderData();
   useEffect(() => {
-    // axios.get(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/user/${email}`, {withCredentials: true})
+    // axios.get(`https://learn-lang-server-rose.vercel.app/tutors/user/${email}`, {withCredentials: true})
     //   .then(res => {
     //     setMyTutorials(res.data);
     //   })
@@ -43,7 +43,7 @@ const MyTutorials = () => {
       if (result.isConfirmed) {
 
 
-        axios.delete(`https://learn-lang-server-19ri7crg9-ar-rafis-projects.vercel.app/tutors/myTutorials/${id}`)
+        axios.delete(`https://learn-lang-server-rose.vercel.app/tutors/myTutorials/${id}`)
           .then(res => {
             // console.log(res.data);
             if (res.data.deletedCount > 0) {
@@ -70,7 +70,7 @@ const MyTutorials = () => {
 
 
   return (
-    <div className='my-10 md:my-14 px-4 container mx-auto'>
+    <div className='my-10 md:my-14 px-4 container mx-auto min-h-screen'>
       <h2 className='text-3xl md:text-4xl text-primary-light font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
       <div className="overflow-x-auto ">
         <table className={`table ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
