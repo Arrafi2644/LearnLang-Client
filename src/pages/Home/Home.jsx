@@ -4,6 +4,7 @@ import States from '../../components/States/States';
 import LanguageCategorySection from '../../components/LanguageCategorySection/LanguageCategorySection';
 import Testimonial from '../../components/Testimonial/Testimonial';
 import LatestBlog from '../../components/LatestBlog/LatestBlog';
+import TutorSection from '../../components/TutorSection/TutorSection';
 
 const Home = () => {
     return (
@@ -15,6 +16,8 @@ const Home = () => {
             <States></States>
             {/* Language Category  */}
             <LanguageCategorySection></LanguageCategorySection>
+            {/* Tutors section  */}
+            <TutorSection></TutorSection>
             {/* Testimonial */}
             <Testimonial></Testimonial>
             {/* blog */}
