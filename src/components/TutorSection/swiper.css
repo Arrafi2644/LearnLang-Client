@@ -1,0 +1,36 @@
+/* You can add this to your global styles (e.g., index.css or global.css) */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffff; /* or any other visible color */
+  z-index: 10;
+  background-color: #EB5A3C;
+  padding: 6px;
+  
+}
+.swiper{
+    position: relative;
+}
+
+.swiper-button-prev{
+    position: absolute;
+    left: 0;
+}
+
+.swiper-button-next{
+    position: absolute;
+    right: 0;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    font-size: 24px;
+    
+}
+
+
+
+.swiper-pagination-bullets{
+    display: none;
+}
+
+/* */

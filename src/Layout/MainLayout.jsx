@@ -8,7 +8,7 @@ import { ThemeContext } from '../context/ThemeContext';
 const MainLayout = () => {
     const {themeColor, setThemeColor} = useContext(ThemeContext)
     return (
-        <div className={`font-lato ${themeColor === "light" ? "bg-background-light" : "bg-background-dark" }  text-text-light `}>
+        <div className={`font-lato ${themeColor === "light" ? "bg-secondary-light" : "bg-background-dark" }  text-text-light `}>
             <Navbar></Navbar>
             <div >
             <Outlet></Outlet>
