@@ -16,7 +16,7 @@ export default {
         },
         background: {
           light: '#EDF4C2',
-          dark: '#121212'
+          dark: '#3f3a3a'
         },
         text: {
           light: '#333333',
@@ -30,7 +30,7 @@ export default {
           light: '#EB5A3C'
         },
         secondary: {
-          light: '#E7D283'
+          light: 'white'
         }
 
       },
