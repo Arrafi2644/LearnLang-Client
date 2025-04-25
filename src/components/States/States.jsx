@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
+
 
 const States = () => {
     const [tutorials, setTutorials] = useState([]);
@@ -44,6 +46,11 @@ const States = () => {
     }, []); // Empty dependency array to ensure the effect runs only once
 
     return (
+        <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: easeIn }}
+    >
         <div className='py-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-2 bg-accent-light' >
             <div className='text-center'>
                 <h2 className='font-bold text-4xl '>{tutors.length}+</h2>
@@ -62,6 +69,7 @@ const States = () => {
                 <p className='font-medium '>Users</p>
             </div>
         </div>
+            </motion.div>
     );
 };
 

@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast from 'react-hot-toast';
-import axios from 'axios';
 import { FcGoogle } from 'react-icons/fc';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
+
 
 const Login = () => {
 
@@ -59,11 +60,13 @@ const Login = () => {
     
   }
 
- 
-
   return (
+    <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: easeIn }}
+>
     <div className="hero bg-white   py-12 px-4">
-
       <div className="hero-content flex-col md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
           <h1 className="text-3xl md:text-4xl text-primary-light font-bold text-center ">Login Now</h1>
@@ -98,6 +101,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

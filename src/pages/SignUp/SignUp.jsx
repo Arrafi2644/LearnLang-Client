@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast, { Toaster } from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
+
 
 const SignUp = () => {
   const { signupUser, updateUser, signInWithGoogle } = useAuth()
@@ -41,8 +43,6 @@ const SignUp = () => {
     .catch(error => {
       toast.error("Something went wrong! Please try again.");
     })
-
-
   }
 
   const handleLoginWithGoogle = () => {
@@ -63,8 +63,12 @@ const SignUp = () => {
   }
 
   return (
+    <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: easeIn }}
+>
     <div className="hero bg-white w-full py-12 px-4">
-
       <div className="hero-content flex-col w-full md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
           <h1 className="text-3xl md:text-4xl font-bold text-center text-primary-light">Signup Now</h1>
@@ -112,6 +116,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import useAuth from '../../hooks/UseAuth';
-import axios from 'axios';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { ThemeContext } from '../../context/ThemeContext';
@@ -40,7 +40,11 @@ const {themeColor} = useContext(ThemeContext)
   }
   return (
     // <h2 className='te xt-3xl font-bold text-center'>Add a Tutor</h2>
-
+    <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: easeIn }}
+>
     <div className="hero  my-10 md:my-14 rounded-lg min-h-screen px-4 container mx-auto">
       <div className={`hero-content flex-col w-full md:w-11/12 lg:w-4/5 text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>
         <div className="text-center lg:text-left w-full ">
@@ -117,6 +121,7 @@ const {themeColor} = useContext(ThemeContext)
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

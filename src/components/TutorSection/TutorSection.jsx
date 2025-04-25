@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import useTutors from '../../hooks/useTutors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -21,6 +22,11 @@ const TutorSection = () => {
 
     return (
         <div className='mt-10 md:mt-14 mx-4'>
+   <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: easeIn }}
+            >
             <h2 className=' font-bold text-center text-3xl md:text-4xl text-primary-light'>
                 Our Expert Tutors
             </h2>
@@ -61,6 +67,7 @@ const TutorSection = () => {
                     </Swiper>
                 )}
             </div>
+            </motion.div>
         </div>
     );
 };

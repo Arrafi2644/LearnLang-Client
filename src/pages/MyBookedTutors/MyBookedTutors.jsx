@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import TutorCard from '../../components/TutorCard/TutorCard';
 import MyBookedTutorCard from '../../components/MyBookedTutorCard/MyBookedTutorCard';
 import useAuth from '../../hooks/UseAuth';
-import axios from 'axios';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MyBookedTutors = () => {
@@ -29,6 +29,11 @@ const MyBookedTutors = () => {
     }, [])
 
     return (
+      <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: easeIn }}
+  >
         <div className='my-10 md:my-14 px-4 container mx-auto'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
                 <div><h2 className='text-3xl md:text-4xl text-primary-light font-bold'>Your Booked Tutors</h2></div>
@@ -40,6 +45,7 @@ const MyBookedTutors = () => {
                 }
             </div>
         </div>
+        </motion.div>
     );
 };
 

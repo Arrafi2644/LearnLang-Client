@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { FaLocationDot, FaMessage } from 'react-icons/fa6';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -6,6 +7,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
+        <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: easeIn }}
+    >
         <div className='bg-background-dark text-text-dark mt-10 md:mt-10 '>
             <div className='container px-4 mx-auto'>
                 <footer className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-6  py-10">
@@ -48,6 +54,7 @@ const Footer = () => {
                 </footer>
             </div>
         </div>
+        </motion.div>
     );
 };
 

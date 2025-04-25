@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
-import { Link, useLoaderData } from 'react-router-dom';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import useAuth from '../../hooks/UseAuth';
 import Swal from 'sweetalert2';
 import MyTutorialRow from '../../components/MyTutorialRow/MyTutorialRow';
@@ -70,6 +69,11 @@ const MyTutorials = () => {
 
 
   return (
+    <motion.div
+    initial={{ y: 20, opacity: 0 }}
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: easeIn }}
+>
     <div className='my-10 md:my-14 px-4 container mx-auto min-h-screen'>
       <h2 className='text-3xl md:text-4xl text-primary-light font-bold mb-4'>My Total Tutorials: {myTutorials.length}</h2>
       <div className="overflow-x-auto ">
@@ -98,6 +102,7 @@ const MyTutorials = () => {
         </table>
       </div>
     </div>
+    </motion.div>
   );
 };
 
