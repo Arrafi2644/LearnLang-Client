@@ -9,14 +9,16 @@
 
 - **Tutor Browsing:** Users can search for tutors based on language category.
 - **Book Tutor:** Users can book tutor.
-- **Sort:** Users can use short functionality to find tutor base on short.
-- **Review:** User can review his favorite tutor.
+- **Search:** Users can search base on language or name to find tutor.
+- **Sort:** Users can use short functionality to find tutor base on price.
+- **Filter:** Users can use filter functionality to find tutor base on language.
+- **Review:** User can give review his favorite tutor.
 - **Add Tutorial:** Anybody who is logged in he/she can add tutorial.
 - **Responsive Design:** Fully responsive and optimized for all devices.
 
 ## Technologies Used
 
-- **Frontend:** React, Tailwind CSS, DaisyUI
+- **Frontend:** React, Tailwind CSS, DaisyUI, Axios, Tanstack Query, React Hot Toast
 - **Backend:** Node.js, Express.js
 - **Database:** Firebase for authentication and MongoDB for data management.
 

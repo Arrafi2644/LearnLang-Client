@@ -10,12 +10,11 @@ const MyBookedTutors = () => {
     const [bookedTutors, setBookedTutors] = useState()
     const {user} = useAuth()
     const email = user?.email;
-
-    const axiosInstance = useAxiosSecure()
+    const axiosSecure = useAxiosSecure()
     // console.log(bookedTutors);
 
     useEffect(()=>{
-      axiosInstance.get(`/my-booked-tutors/${email}`)
+      axiosSecure.get(`/my-booked-tutors/${email}`)
       .then(res => {
         // console.log(res.data);
         const tutors = res.data;
@@ -41,7 +40,11 @@ const MyBookedTutors = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>
                 {
+                  bookedTutors.length > 0 ?
                     bookedTutors?.map(tutor => <MyBookedTutorCard key={tutor._id} tutor={tutor}></MyBookedTutorCard>)
+                    : <div className='w-full mt-24'>
+                    <h2 className='text-xl font-bold text-center text-accent-light'>No tutor found for this language.</h2>
+                </div>
                 }
             </div>
         </div>
