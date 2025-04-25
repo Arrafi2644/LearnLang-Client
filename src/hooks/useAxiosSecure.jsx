@@ -4,7 +4,7 @@ import useAuth from './UseAuth';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://learn-lang-server-rose.vercel.app',
     withCredentials: true
 })
 

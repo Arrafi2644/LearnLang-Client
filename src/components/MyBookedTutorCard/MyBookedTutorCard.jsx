@@ -16,9 +16,9 @@ const MyBookedTutorCard = ({tutor}) => {
     const handleReview = (id) => {
         // console.log(id);
 
-        // axios.post(`http://localhost:5000/tutors/${id}`)
+        // axios.post(`https://learn-lang-server-rose.vercel.app/tutors/${id}`)
 
-        axios.put(`http://localhost:5000/tutors/${id}`, tutor )
+        axios.put(`https://learn-lang-server-rose.vercel.app/tutors/${id}`, tutor )
         .then(res => {
             // console.log(res.data);
             if(res.data.modifiedCount > 0) {
@@ -30,7 +30,7 @@ const MyBookedTutorCard = ({tutor}) => {
             toast.error("Review failed!")
         })
         
-        // axios.put(`http://localhost:5000/my-booked-tutors/${id}`, )
+        // axios.put(`https://learn-lang-server-rose.vercel.app/my-booked-tutors/${id}`, )
         // .then(res => {
         //         console.log(res.data);
         //     })
@@ -40,7 +40,7 @@ const MyBookedTutorCard = ({tutor}) => {
 
     }
     return (
-        <div className={`flex gap-2 shadow-md p-2 ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
+        <div className={`flex gap-2 shadow-md p-2 border ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
             <div>
                 <img className='w-48 h-48 object-cover' src={tutorImage} alt="" />
             </div>
