@@ -1,16 +1,18 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import { LuReceiptJapaneseYen, LuReceiptRussianRuble } from 'react-icons/lu';
 import { RiEnglishInput } from 'react-icons/ri';
 import { TbAlphabetArabic, TbAlphabetKorean } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../context/ThemeContext';
+
 
 
 const LanguageCategorySection = () => {
     const [tutors, setTutors] = useState([])
     const [categories, setCategories] = useState([]);
-
+    const {themeColor} = useContext(ThemeContext)
 
 
     useEffect(() => {
@@ -41,7 +43,8 @@ const LanguageCategorySection = () => {
     // console.log(categories);
     return (
         <div className='mt-10 md:mt-14 mx-4'>
-            <h2 className=' mb-4 font-bold  text-center text-3xl md:text-4xl text-primary-light'>Choose Your Language</h2>
+            <h2 className=' font-bold  text-center text-3xl md:text-4xl text-primary-light'>Choose Your Language</h2>
+            <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Explore a World of Languages: Find Your Perfect Tutor Today</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
