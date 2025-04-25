@@ -44,21 +44,21 @@ const States = () => {
     }, []); // Empty dependency array to ensure the effect runs only once
 
     return (
-        <div className='py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 bg-[#E7D283]' >
+        <div className='py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 bg-accent-light' >
             <div className='text-center '>
-                <h2 className='font-bold text-4xl '>{tutors.length}</h2>
+                <h2 className='font-bold text-4xl '>{tutors.length}+</h2>
                 <p className='font-medium '>Tutor</p>
             </div>
             <div className='text-center '>
-                <h2 className='font-bold text-4xl '>{reviews}</h2>
+                <h2 className='font-bold text-4xl '>{reviews}+</h2>
                 <p className='font-medium '>Reviews</p>
             </div>
             <div className='text-center '>
-                <h2 className='font-bold text-4xl '>{languages}</h2>
+                <h2 className='font-bold text-4xl '>{languages}+</h2>
                 <p className='font-medium '>Languages</p>
             </div>
             <div className='text-center '>
-                <h2 className='font-bold text-4xl '>{tutors.length}</h2>
+                <h2 className='font-bold text-4xl '>{tutors.length}+</h2>
                 <p className='font-medium '>Users</p>
             </div>
         </div>

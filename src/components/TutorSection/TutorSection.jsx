@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 const TutorSection = () => {
     const [tutors, isLoading, refetch] = useTutors();
+    console.log(tutors);
 
     return (
         <div className='mt-10 md:mt-14 mx-4'>
@@ -41,12 +42,12 @@ const TutorSection = () => {
                                 <div className='flex flex-col gap-1 justify-center items-center p-6 bg-white rounded-lg'>
                                     <img
                                         className='w-full h-60 border object-cover rounded-md'
-                                        src={tutor.image}
+                                        src={tutor.tutorImage}
                                         alt={tutor.name}
                                     />
                                     <h3 className='font-semibold text-center mt-2'>{tutor.name}</h3>
-                                    <h3 className='font-semibold text-center mt-2'>{tutor.language}</h3>
-                                    <button className="btn bg-[#EB5A3C] text-white min-h-0 h-auto w-full py-2.5 mt-1">View details</button>
+                                    <h3 className='font-semibold text-center mt-2'>Language: {tutor.language}</h3>
+                                    <Link to={`tutor/${tutor._id}`}><button className="btn bg-[#EB5A3C] text-white min-h-0 h-auto w-full block py-2.5 mt-1">View details</button></Link>
                                 </div>
                             </SwiperSlide>
                         ))}
