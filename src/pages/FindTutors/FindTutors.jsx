@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import TutorCard from '../../components/TutorCard/TutorCard';
 import axios from 'axios';
 import useAuth from '../../hooks/UseAuth';
+import { IoSearchOutline } from 'react-icons/io5';
 
 const FindTutors = () => {
     const { setAllTutors } = useAuth()
@@ -92,17 +93,26 @@ const FindTutors = () => {
         <div className='my-10 md:my-14 px-4 container mx-auto min-h-screen'>
             <div className='flex flex-col md:flex-row gap-6 justify-center md:justify-between'>
                 <div><h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center md:text-left'>Find Your Tutor</h2></div>
-                <div className='flex gap-2 flex-wrap justify-center'>
-                    <button onClick={handleSort} className="btn bg-accent-light hover:bg-accent-dark text-text-light px-6">Sort by price</button>
-                    <div className="join">
-                        <div>
-                            <div className='flex justify-center'>
-                                <input onChange={(e) => handleSearch(e)} className="input input-bordered join-item bg-white" placeholder="Search" />
-                                <button className="btn join-item text-text-light bg-accent-light hover:bg-accent-dark">Search</button>
-                            </div>
-                        </div>
-                    </div>
+                <div className='flex items-center gap-4'>
+                    {/* search input  */}
+                    <label className="input relative flex  items-center bg-white border border-gray-400 min-h-0 h-auto p-2 px-4 pl-2 w-full">
+
+                        <span className='pr-1'><IoSearchOutline /> </span>
+                        <input type="search" className="grow" placeholder="Search" />
+
+                    </label>
+
+                    {/* sort  */}
+                    <fieldset className="fieldset min-h-0 h-auto border border-gray-400 rounded-md">
+                        <select defaultValue="Pick a browser" className="select min-h-0 h-auto py-1.5 px-4 min-w-40 bg-white">
+                            <option>Sort By</option>
+                            <option>Ascending</option>
+                            <option>Descending</option>
+                        </select>
+                    </fieldset>
                 </div>
+
+
             </div>
             {
                 tutors.length > 0 ? <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6'>

@@ -23,7 +23,7 @@ export default {
           dark: '#E0E0E0'
         },
         accent: {
-          light: '#DF9755',
+          light: '#EB5A3C',
           dark: '#FFD166'
         },
         primary: {
