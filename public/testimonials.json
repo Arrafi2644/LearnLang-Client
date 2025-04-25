@@ -3,29 +3,34 @@
       "userImage": "https://i.ibb.co.com/F6c7gmP/image.png",
       "name": "Sophia Turner",
       "learnedLanguage": "Spanish",
+      "rating": 4.8,
       "feedback": "The lessons were interactive and fun, making it easy to learn Spanish quickly!"
     },
     {
       "userImage": "https://i.ibb.co.com/zXRrw54/image.png",
       "name": "James Anderson",
       "learnedLanguage": "French",
+      "rating": 4.9,
       "feedback": "The tutor's approach was fantastic, and I now feel confident speaking French in any situation."
     },
     {
       "userImage": "https://i.ibb.co.com/dQYtZ8G/image.png",
       "name": "Emma Johnson",
       "learnedLanguage": "German",
-      "feedback": "Learning German seemed daunting at first, but the structured lessons made it simple and enjoyable."
+      "rating": 5,
+      "feedback": "Learning German seemed daunting at first, but the structured lessons made it simple."
     },
     {
       "userImage": "https://i.ibb.co.com/DbZg21g/image.png",
       "name": "Michael Brown",
       "learnedLanguage": "Japanese",
+      "rating": 4.8,
       "feedback": "A fantastic platform with expert tutors who truly care about their students' progress."
     },
     {
       "userImage": "https://i.ibb.co.com/nLH3Cm0/image.png",
       "name": "Liam Davis",
+      "rating": 4.9,
       "learnedLanguage": "English",
       "feedback": "My English tutor was excellent and tailored the lessons perfectly to my learning needs."
     }

@@ -10,9 +10,10 @@ import './swiper.css';
 import { Link } from 'react-router-dom';
 
 const TutorSection = () => {
+    const [category, setCategory] = useState("")
     const [sort, setSort] = useState("")
     const [search, setSearch] = useState("")
-    const [tutors, isLoading, refetch] = useTutors(sort, search);
+    const [tutors, isLoading, refetch] = useTutors(sort, search, category);
     console.log(tutors);
 
 
