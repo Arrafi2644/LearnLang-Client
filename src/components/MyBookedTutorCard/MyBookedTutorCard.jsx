@@ -40,7 +40,7 @@ const MyBookedTutorCard = ({tutor}) => {
 
     }
     return (
-        <div className={`flex gap-2 shadow-md p-2 ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
+        <div className={`flex gap-2 shadow-md p-2 border ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
             <div>
                 <img className='w-48 h-48 object-cover' src={tutorImage} alt="" />
             </div>
