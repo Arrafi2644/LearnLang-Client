@@ -14,7 +14,7 @@ const LanguageCategorySection = () => {
 
 
     useEffect(() => {
-        axios.get('https://learn-lang-server-rose.vercel.app/tutors')
+        axios.get('http://localhost:5000/tutors')
             .then(res => {
                 setTutors(res.data)
             })
@@ -45,7 +45,7 @@ const LanguageCategorySection = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
-                    categories.map((category, index) => <Link key={index} to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between bg-secondary-light'>
+                    categories.map((category, index) => <Link state={category.language} key={index} to={`/find-tutors/${category.language}`} onClick={()=>handleCategory(category)} className='border p-4 rounded-sm flex gap-2 items-center justify-between bg-secondary-light'>
                         <div className='flex gap-3 items-center'>
                             
                             {/* <span className='font-bold text-2xl'><RiEnglishInput></RiEnglishInput></span> */}
