@@ -57,7 +57,7 @@ const TestimonialSlider = () => {
                                     <input  name="rating-2" className="mask mask-star-2 rating-5 bg-orange-400" aria-label="4 star" />
                                     <input  name="rating-2" className="mask mask-star-2 rating-5 bg-orange-400" aria-label="5 star" />
                                 </div><p className='font-semibold text-base'>({review.rating})</p></span>
-                                <p>"{review.feedback} "</p>
+                                <p>" {review.feedback} "</p>
                             </div>
                         </SwiperSlide>)
                     }

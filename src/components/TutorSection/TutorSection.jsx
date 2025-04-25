@@ -46,7 +46,7 @@ const TutorSection = () => {
                     >
                         {tutors.map((tutor, index) => (
                             <SwiperSlide key={index}>
-                                <div className='flex flex-col gap-1 justify-center items-center p-6 bg-white rounded-lg'>
+                                <div className='flex flex-col gap-1 justify-center items-center p-6 bg-white rounded-lg border'>
                                     <img
                                         className='w-full h-60 border object-cover rounded-md'
                                         src={tutor.tutorImage}
