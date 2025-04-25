@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
+
 
 const LatestBlog = () => {
      const {themeColor} = useContext(ThemeContext)
@@ -15,6 +17,11 @@ const LatestBlog = () => {
     
         }, [])
     return (
+        <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: easeIn }}
+    >
         <div className='my-10 md:my-14 mx-4'>
             <h2 className='text-3xl md:text-4xl text-primary-light font-bold text-center'>Latest Blog & Articles</h2>
             <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Stay updated with our latest blogs, featuring insights and tips to enhance your learning journey</p>
@@ -38,6 +45,7 @@ const LatestBlog = () => {
                 }
             </div>
         </div>
+        </motion.div>
     );
 };
 

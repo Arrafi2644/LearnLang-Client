@@ -1,3 +1,4 @@
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,6 +15,11 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
+        <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: easeIn }}
+    >
         <div className='max-h-96 h-96 '>
             <Swiper
                 slidesPerView={1}
@@ -60,6 +66,7 @@ const Banner = () => {
                 </SwiperSlide>
             </Swiper>
         </div>
+        </motion.div>
     );
 };
 

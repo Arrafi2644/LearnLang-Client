@@ -5,7 +5,6 @@ import { Tooltip } from 'react-tooltip';
 import toast from 'react-hot-toast';
 import { ThemeContext } from '../context/ThemeContext';
 
-
 const Navbar = () => {
     const {user, logout, loading} = useAuth()
     // console.log(user?.photoURL);   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light")
@@ -60,7 +59,8 @@ const handleSignout = ()=>{
     }) 
   }
     return (
-        <div className={`bg-[#EB5A3C] sticky top-0 left-0 z-10`}>
+
+        <div className={`bg-[#EB5A3C] sticky top-0 left-0 z-20`}>
             <div className="navbar container mx-auto px-4">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -134,6 +134,7 @@ const handleSignout = ()=>{
                 </div>
             </div>
         </div>
+      
     );
 };
 

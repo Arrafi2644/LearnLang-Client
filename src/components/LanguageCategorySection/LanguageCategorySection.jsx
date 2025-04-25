@@ -1,13 +1,10 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
-import { LuReceiptJapaneseYen, LuReceiptRussianRuble } from 'react-icons/lu';
-import { RiEnglishInput } from 'react-icons/ri';
-import { TbAlphabetArabic, TbAlphabetKorean } from 'react-icons/tb';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
+
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../context/ThemeContext';
-
-
 
 const LanguageCategorySection = () => {
     const [tutors, setTutors] = useState([])
@@ -37,12 +34,13 @@ const LanguageCategorySection = () => {
        
     }
 
-
-    // console.log(tutors);
-    // const categories = tutors.filter(tutor => tutor.language)
-    // console.log(categories);
     return (
         <div className='mt-10 md:mt-14 mx-4'>
+               <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: easeIn }}
+            >
             <h2 className=' font-bold  text-center text-3xl md:text-4xl text-primary-light'>Choose Your Language</h2>
             <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Explore a World of Languages: Find Your Perfect Tutor Today</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -66,7 +64,7 @@ const LanguageCategorySection = () => {
 
 
             </div>
-
+            </motion.div>
         </div>
     );
 };
