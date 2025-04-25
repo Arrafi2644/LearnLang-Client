@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
 
@@ -61,7 +62,7 @@ const Login = () => {
  
 
   return (
-    <div className="hero bg-background-light  my-10 md:my-14 px-4">
+    <div className="hero bg-white   py-12 px-4">
 
       <div className="hero-content flex-col md:w-11/12 lg:w-4/5">
         <div className="text-center lg:text-left w-full ">
@@ -71,20 +72,20 @@ const Login = () => {
           </p>
         </div>
         <div className="card bg-secondary-light w-full rounded-lg shadow-2xl">
-        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8 bg-accent-light hover:bg-accent-dark text-text-light">Login With Google</button>
+        <button onClick={handleLoginWithGoogle} className="btn my-6 mx-8 btn-outline border-gray-300 hover:bg-accent-dark text-text-light"> <span><FcGoogle size={20} /></span> Login With Google</button>
         <div className="divider mx-8">OR</div>
           <form onSubmit={handleLogin} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-text-light font-semibold">Email</span>
               </label>
-              <input name='email' type="email" placeholder="Email" className="input input-bordered bg-white placeholder:text-text-light" required />
+              <input name='email' type="email" placeholder="Email" className="input input-bordered bg-gray-50 border-gray-300 placeholder:text-text-light" required />
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-text-light font-semibold">Password</span>
               </label>
-              <input name='password' type="password" placeholder="Password" className="input input-bordered  bg-white placeholder:text-text-light" required />
+              <input name='password' type="password" placeholder="Password" className="input input-bordered  bg-gray-50 border-gray-300 placeholder:text-text-light" required />
             </div>
 
             <div className="form-control mt-6 col-span-1 md:col-span-2">

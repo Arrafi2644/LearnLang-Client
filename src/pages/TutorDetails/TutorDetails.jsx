@@ -26,7 +26,7 @@ const TutorDetails = () => {
     const id = params.id;
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/tutors/${id}`)
+        axios.get(`https://learn-lang-server-rose.vercel.app/tutors/${id}`)
             .then(res => {
                 // console.log(res.data);
                 setTutor(res.data)
@@ -76,7 +76,7 @@ const TutorDetails = () => {
         }
 
 
-        axios.post('http://localhost:5000/my-booked-tutors', bookedTutor)
+        axios.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
             .then(res => {
                 // console.log(res.data);
                 toast.success("Tutor booked successfully!")
@@ -89,7 +89,7 @@ const TutorDetails = () => {
     }
     // console.log(bookedTutors);
 
-    //   axiosInstance.post('http://localhost:5000/my-booked-tutors', bookedTutor)
+    //   axiosInstance.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
     // .then(res => {
     //     console.log(res.data);
     //     toast.success("Tutor booked successfully!")

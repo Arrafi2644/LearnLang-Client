@@ -16,7 +16,7 @@ const LanguageCategorySection = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/tutors')
+        axios.get('https://learn-lang-server-rose.vercel.app/tutors')
             .then(res => {
                 setTutors(res.data)
             })

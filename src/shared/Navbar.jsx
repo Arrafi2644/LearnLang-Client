@@ -122,10 +122,10 @@ const handleSignout = ()=>{
                         user?.email? <div className='flex gap-1 items-center'>
                             <img className='h-10 w-10 rounded-full' referrerPolicy='no-referrer' id='userImg' src={user?.photoURL} alt="" />
                         <Tooltip className='absolute z-10' anchorId="userImg" place='bottom' content={user?.displayName} /> 
-                        <Link onClick={handleSignout} className="btn text-text-light bg-accent-light hover:bg-accent-dark">Logout</Link>
+                        <Link onClick={handleSignout} className="btn text-text-light bg-accent-light hover:bg-accent-dark min-h-0 h-auto py-3 px-4">Logout</Link>
                         </div>
                             :
-                            <Link to='/login' className="btn text-text-light bg-accent-light hover:bg-accent-dark">Login</Link>
+                            <Link to='/login' className="btn text-text-light bg-accent-light hover:bg-accent-dark  min-h-0 h-auto py-3 px-4">Login</Link>
                       } 
 
 
