@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData, useLocation, useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/UseAuth';
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion"
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
@@ -87,16 +88,14 @@ const TutorDetails = () => {
             })
 
     }
-    // console.log(bookedTutors);
-
-    //   axiosInstance.post('https://learn-lang-server-rose.vercel.app/my-booked-tutors', bookedTutor)
-    // .then(res => {
-    //     console.log(res.data);
-    //     toast.success("Tutor booked successfully!")
-    // })
-
 
     return (
+        <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: easeIn }}
+    >
+        {
         loading ? <span className="loading loading-ring loading-lg text-primary-light  absolute left-1/2 -translate-x-1/2 top-24"></span>
             :
             <div className='flex flex-col md:flex-row gap-3 shadow-md p-2 container mx-auto px-4 mt-12'>
@@ -132,7 +131,8 @@ const TutorDetails = () => {
 
 
             </div>
-
+}
+            </motion.div>
 
     );
 };
