@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import useTutors from '../../hooks/useTutors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -8,19 +8,23 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './swiper.css';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../context/ThemeContext';
+
 
 const TutorSection = () => {
+    const {themeColor} = useContext(ThemeContext)
+    const [category, setCategory] = useState("")
     const [sort, setSort] = useState("")
     const [search, setSearch] = useState("")
-    const [tutors, isLoading, refetch] = useTutors(sort, search);
+    const [tutors, isLoading, refetch] = useTutors(sort, search, category);
     console.log(tutors);
-
 
     return (
         <div className='mt-10 md:mt-14 mx-4'>
-            <h2 className='mb-4 font-bold text-center text-3xl md:text-4xl text-primary-light'>
+            <h2 className=' font-bold text-center text-3xl md:text-4xl text-primary-light'>
                 Our Expert Tutors
             </h2>
+            <p className={`text-center mb-6 ${themeColor === 'light' ? 'text-text-light' : 'text-text-dark'}`}>Meet Our Expert Tutors: Your Path to Language Mastery Begins Here</p>
 
             <div className='max-h-96 h-96 '>
                 {!isLoading && tutors?.length > 0 && (

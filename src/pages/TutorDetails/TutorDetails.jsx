@@ -58,83 +58,83 @@ const TutorDetails = () => {
 
         if (!user) {
             navigate("/login", {
-                state: `/tutor/${_id}` 
-              });
+                state: `/tutor/${_id}`
+            });
 
             return
-          }
+        }
 
-         
-          
 
-        
-          
 
-    if (email === tutor.userEmail) {
-        toast.error("You cannot book your own tutorial!")
-        return;
+
+
+
+
+        if (email === tutor.userEmail) {
+            toast.error("You cannot book your own tutorial!")
+            return;
+        }
+
+
+        axios.post('http://localhost:5000/my-booked-tutors', bookedTutor)
+            .then(res => {
+                // console.log(res.data);
+                toast.success("Tutor booked successfully!")
+            })
+            .catch(err => {
+                // console.log(err);
+                toast.error("Something went wrong!")
+            })
+
     }
+    // console.log(bookedTutors);
+
+    //   axiosInstance.post('http://localhost:5000/my-booked-tutors', bookedTutor)
+    // .then(res => {
+    //     console.log(res.data);
+    //     toast.success("Tutor booked successfully!")
+    // })
 
 
-    axios.post('http://localhost:5000/my-booked-tutors', bookedTutor)
-        .then(res => {
-            // console.log(res.data);
-            toast.success("Tutor booked successfully!")
-        })
-        .catch(err => {
-            // console.log(err);
-            toast.error("Something went wrong!")
-        })
+    return (
+        loading ? <span className="loading loading-ring loading-lg text-primary-light  absolute left-1/2 -translate-x-1/2 top-24"></span>
+            :
+            <div className='flex flex-col md:flex-row gap-3 shadow-md p-2 container mx-auto px-4 mt-12'>
+                <div>
+                    <img referrerPolicy='no-referrer' className='w-full md:w-60 md:h-60 object-cover ' src={tutorImage} alt="" />
+                </div>
+                <div className={`flex flex-col ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
+                    <h3 className='text-lg font-bold'>{name}</h3>
+                    <p className='font-medium grow'>Language: {language}</p>
+                    <p className='font-medium grow'>Price: ${price}</p>
 
-}
-// console.log(bookedTutors);
-
-//   axiosInstance.post('http://localhost:5000/my-booked-tutors', bookedTutor)
-// .then(res => {
-//     console.log(res.data);
-//     toast.success("Tutor booked successfully!")
-// })
-
-
-return (
-    loading ? <span className="loading loading-ring loading-lg text-primary-light  absolute left-1/2 -translate-x-1/2 top-24"></span>
-        :
-        <div className='flex flex-col md:flex-row gap-3 shadow-md p-2'>
-            <div>
-                <img referrerPolicy='no-referrer' className='w-full md:w-60 md:h-60 object-cover ' src={tutorImage} alt="" />
-            </div>
-            <div className={`flex flex-col ${themeColor === "light" ? 'text-text-light' : 'text-text-dark'}`}>
-                <h3 className='text-lg font-bold'>{name}</h3>
-                <p className='font-medium grow'>Language: {language}</p>
-                <p className='font-medium grow'>Price: ${price}</p>
-
-                <div className='flex items-center gap-2'>
-                    <p className='font-medium'>Reviews: </p>
-                    <div className="rating rating-xs">
-                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
-                        <input
-                            type="radio"
-                            name="rating-6"
-                            className="mask mask-star-2 bg-orange-400"
-                            defaultChecked />
-                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
-                        <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                    <div className='flex items-center gap-2'>
+                        <p className='font-medium'>Reviews: </p>
+                        <div className="rating rating-xs">
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" />
+                            <input
+                                type="radio"
+                                name="rating-6"
+                                className="mask mask-star-2 bg-orange-400"
+                                defaultChecked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                            <input type="radio" name="rating-6" className="mask mask-star-2 bg-orange-400" defaultChecked />
+                        </div>
+                        ({review})
                     </div>
-                    ({review})
+
+
+                    <p className='font-medium grow'>{description}</p>
+
+                    <Link onClick={() => handleMyBookedTutor(_id)} className='btn btn-sm text-text-light bg-accent-light hover:bg-accent-dark min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
                 </div>
 
 
-                <p className='font-medium grow'>{description}</p>
-
-                <Link onClick={() => handleMyBookedTutor(_id)} className='btn btn-sm text-text-light bg-accent-light hover:bg-accent-dark min-h-0 h-auto p-3 max-w-40 text-sm'>Book Now </Link>
             </div>
 
 
-        </div>
-
-
-);
+    );
 };
 
 export default TutorDetails;

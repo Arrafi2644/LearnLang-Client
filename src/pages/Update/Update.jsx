@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/UseAuth';
 import axios from 'axios';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const Update = () => {
@@ -10,6 +10,7 @@ const [allTutorials, setAllTutorials] = useState([])
   // const data = useLoaderData()
   const params = useParams()
   const id = (params.id);
+  const navigate = useNavigate()
 
   useEffect(()=>{
     fetch(`http://localhost:5000/tutors`)
@@ -24,12 +25,6 @@ const [allTutorials, setAllTutorials] = useState([])
 
   const {_id, name, email, language, price, review, description, image, tutorImage} = tutorial || {};
 
-
-  // console.log(data)
-  // console.log(user)
-  // const tutorImage = user?.photoURL
-
-  // console.log(id);
 
   const handleAddTutorial = (e) => {
     e.preventDefault()
@@ -52,6 +47,7 @@ const [allTutorials, setAllTutorials] = useState([])
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
           toast.success("Tutorial updated successful!")
+          navigate('/my-tutorials')
         }
       })
       .catch(err => {

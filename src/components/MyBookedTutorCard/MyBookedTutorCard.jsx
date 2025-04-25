@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { ThemeContext } from '../../context/ThemeContext';
+import { TbThumbUp } from 'react-icons/tb';
 
 const MyBookedTutorCard = ({tutor}) => {
     
@@ -48,7 +49,7 @@ const MyBookedTutorCard = ({tutor}) => {
                 <p className='font-medium'>{language}</p>
                 <p className='font-medium grow'>Price: ${price}</p>
 
-                <button onClick={()=>handleReview(_id)} className='btn text-text-light bg-accent-light hover:bg-accent-dark py-3 min-h-0 h-auto'>Review</button>
+                <button onClick={()=>handleReview(_id)} className='btn text-text-light bg-accent-light hover:bg-accent-dark py-2 min-h-0 h-auto'><TbThumbUp size={24}></TbThumbUp></button>
             </div>
         </div>
     );
