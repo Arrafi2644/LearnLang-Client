@@ -9,7 +9,7 @@ const Login = () => {
   const { loginUser, signInWithGoogle, logout } = useAuth();
   const location = useLocation()
   const navigate = useNavigate()
-  // console.log(location);
+  console.log(location.state);
 
   const from = location.state;
   // console.log(from);

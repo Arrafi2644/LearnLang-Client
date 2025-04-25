@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import useTutors from '../../hooks/useTutors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -10,8 +10,11 @@ import './swiper.css';
 import { Link } from 'react-router-dom';
 
 const TutorSection = () => {
-    const [tutors, isLoading, refetch] = useTutors();
+    const [sort, setSort] = useState("")
+    const [search, setSearch] = useState("")
+    const [tutors, isLoading, refetch] = useTutors(sort, search);
     console.log(tutors);
+
 
     return (
         <div className='mt-10 md:mt-14 mx-4'>
